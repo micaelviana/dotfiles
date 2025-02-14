@@ -4,13 +4,13 @@
 
 Clone into your `$HOME` directory
 
-Https:
+HTTPS:
 ```bash
-git clone https://github.com/micaelviana/.dotfiles.git
+git clone https://github.com/micaelviana/dotfiles.git
 ```
-Ssh:
+SSH:
 ```bash
-git clone git@github.com:micaelviana/.dotfiles.git
+git clone git@github.com:micaelviana/dotfiles.git
 ```
 
 ## Ubuntu
