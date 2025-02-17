@@ -27,7 +27,7 @@ return {
                 {
                     "filename",
                     file_status = true,
-                    path = 2 -- 0 = just filename, 1 = relative path, 2 = absolute path
+                    path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
                 },
             },
             lualine_x = { 'encoding', 'fileformat', 'filetype' },
