@@ -15,6 +15,13 @@ return {
     },
 
     {
+        'akinsho/bufferline.nvim',
+        version = "*",
+        dependencies = 'nvim-tree/nvim-web-devicons',
+        opts={},
+    },
+
+    {
         'https://github.com/nvim-pack/nvim-spectre',
         lazy=true,
             keys={
