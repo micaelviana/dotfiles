@@ -14,13 +14,6 @@ return {
         },
     },
 
-    {
-        'akinsho/bufferline.nvim',
-        version = "*",
-        dependencies = 'nvim-tree/nvim-web-devicons',
-        opts={},
-    },
-
 -- install with yarn or npm
 {
   "iamcco/markdown-preview.nvim",
