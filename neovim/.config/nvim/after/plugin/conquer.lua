@@ -173,7 +173,7 @@ local opts = { silent = true, nowait = true }
 -- Show all diagnostics
 keyset("n", "<space>d", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions
-keyset("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
+-- keyset("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands
 keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
 -- Find symbol of current document
