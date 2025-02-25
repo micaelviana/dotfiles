@@ -29,14 +29,20 @@ require("lazy").setup({
         notify = false, -- get a notification when new updates are found
     },
     spec = {
-  -- the colorscheme should be available when starting Neovim
-    {'sainnhe/everforest',
-    name = 'everforest',
-    priority = 1000, -- make sure to load this before all the other start plugins
+
+        --colorschemes
+{
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
     config = function ()
-        vim.cmd.colorscheme('everforest')
+        vim.cmd.colorscheme('tokyonight-storm')
     end,
+  opts = {},
 },
+
+  -- the colorscheme should be available when starting Neovim
+    {'sainnhe/everforest',name = 'everforest', lazy=true},
     { "EdenEast/nightfox.nvim",     lazy = true },
     { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
     { 'sainnhe/sonokai',            lazy = true },
@@ -48,6 +54,6 @@ require("lazy").setup({
     },
 -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "everforest" } },
+  install = { colorscheme = { "tokyonight-storm" } },
 })
 
