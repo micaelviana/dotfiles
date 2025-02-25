@@ -29,8 +29,25 @@ require("lazy").setup({
         notify = false, -- get a notification when new updates are found
     },
     spec = {
-        {import='plugins'}
-    }, --end spec
-    -- Configure any other settings here. See the documentation for more details.
+  -- the colorscheme should be available when starting Neovim
+    {'sainnhe/everforest',
+    name = 'everforest',
+    priority = 1000, -- make sure to load this before all the other start plugins
+    config = function ()
+        vim.cmd.colorscheme('everforest')
+    end,
+},
+    { "EdenEast/nightfox.nvim",     lazy = true },
+    { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
+    { 'sainnhe/sonokai',            lazy = true },
+    { "rose-pine/neovim",           name = "rose-pine",  lazy = true },
+    { "rebelot/kanagawa.nvim", lazy = true },
+
+    --IMPORT YOUR PLUGINS
+    {import='plugins'},
+    },
+-- Configure any other settings here. See the documentation for more details.
+  -- colorscheme that will be used when installing plugins.
+  install = { colorscheme = { "everforest" } },
 })
 
