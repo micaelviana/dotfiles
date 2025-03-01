@@ -123,6 +123,14 @@ noremap <Del> "_x
 nnoremap <silent> <space>h <cmd>sp<cr>
 nnoremap <silent> <space>v <cmd>vsp<cr>
 
+
+
+"Move line up and down
+nnoremap <leader>mk :m .-2<CR>==
+nnoremap <leader>mj :m .+1<CR>==
+vnoremap<leader>mk :m '<-2<CR>gv=gv
+vnoremap <leader>mj :m '>+1<CR>gv=gv
+
 "Persistent indentation on visual mode
 vnoremap <silent> < <gv 
 vnoremap <silent> > >gv 
