@@ -33,8 +33,8 @@ keyset('n', '<space>x', ':!chmod +x %<cr>', { silent = true, noremap = true })
 keyset('i', '<c-v>', '<esc>pa', { noremap = true })
 
 -- Go to normal mode
-keyset('n', 's', ':', { noremap = true })
-keyset('v', 's', ':', { noremap = true })
+keyset('n', 'e', ':', { noremap = true })
+keyset('v', 'e', ':', { noremap = true })
 
 -- Select all
 keyset('n', '\\a', 'ggVG', { noremap = true })

@@ -101,8 +101,8 @@ nnoremap <silent><space>x :!chmod +x %<cr>
 "paste in insert mode using Ctrl+V
 inoremap<c-v> <esc>pa
 "go to normal mode
-nnoremap s :
-vnoremap s :
+nnoremap e :
+vnoremap e :
 "select all
 nnoremap \a ggVG
 "increment/decrement
