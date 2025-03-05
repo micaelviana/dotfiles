@@ -52,12 +52,6 @@ alias gau="git add -u"
 alias gp="git push origin HEAD"
 alias gpl="git pull"
 alias gs="git status"
-#lsd aliases
-alias ls='lsd'
-alias l='lsd -l'
-alias la='lsd -a'
-alias lla='lsd -la'
-alias lt='lsd --tree'
 
 #Arch aliases
 alias pacin="sudo pacman -S --needed"
@@ -112,6 +106,13 @@ plugins=(
 
 #Sources oh-my-zsh config file
 source $ZSH/oh-my-zsh.sh
+
+#lsd aliases
+alias ls='lsd'
+alias l='lsd -l'
+alias la='lsd -a'
+alias lla='lsd -la'
+alias lt='lsd --tree'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
