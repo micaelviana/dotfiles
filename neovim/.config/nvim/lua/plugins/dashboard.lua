@@ -59,19 +59,19 @@ return{
                     icon = ' 󰁯 ',
                     desc = 'Recent Files',
                     key = 'r',
-                    action = 'FzfLua oldfiles'
+                    action = 'Telescope oldfiles'
                 },
                 {
                     icon = '  ',
                     desc = 'Find Files',
                     key = 'f',
-                    action = 'FzfLua files'
+                    action = 'Telescope frecency workspace=CWD theme=ivy'
                 },
                 {
                     icon = ' 󰗊 ',
                     desc = 'Grep text',
                     key = 'g',
-                    action = 'FzfLua live_grep'
+                    action = 'Telescope live_grep'
                 },
                 {
                     icon = ' 󰜎 ',

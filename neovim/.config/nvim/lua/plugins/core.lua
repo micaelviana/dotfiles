@@ -2,10 +2,6 @@ return {
     -- coc
 {'neoclide/coc.nvim',branch = 'release',},
     {
-        "ibhagwan/fzf-lua",
-        dependencies = { "nvim-tree/nvim-web-devicons" },
-    },
-    {
         "nvim-tree/nvim-tree.lua",
         version = "*",
         opts={},
