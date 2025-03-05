@@ -12,7 +12,6 @@ lsd
 man-db
 man-pages
 nano
-neovim
 net-tools
 ripgrep
 shellcheck
