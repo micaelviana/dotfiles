@@ -1,34 +1,25 @@
 #!/usr/bin/env bash
-
-# Detect Linux distribution and version
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    OS=$ID
-    VER=$VERSION_ID
-elif type lsb_release >/dev/null 2>&1; then
-    OS=$(lsb_release -si)
-    VER=$(lsb_release -sr)
-elif [ -f /etc/lsb-release ]; then
-    . /etc/lsb-release
-    OS=$DISTRIB_ID
-    VER=$DISTRIB_RELEASE
+# Detectar gerenciador de pacotes disponível
+if command -v apt &> /dev/null; then
+    PACKAGE_MANAGER="apt"
+elif command -v pacman &> /dev/null; then
+    PACKAGE_MANAGER="pacman"
 else
-    OS=$(uname -s)
-    VER=$(uname -r)
-fi
-
-echo "Detected: $OS $VER"
-
-# Install dependencies
-if [[ "$OS" == "ubuntu" || "$OS" == "debian" ]]; then
-    sudo apt update
-    sudo apt install -y procps build-essential curl file git
-elif [[ "$OS" == "arch" ]]; then
-    sudo pacman -Syu --noconfirm base-devel curl file git procps-ng
-else
-    echo "Unsupported distribution"
+    echo "Gerenciador de pacotes não suportado. O script suporta apenas apt e pacman."
     exit 1
 fi
 
-# Install Homebrew
+echo "Gerenciador de pacotes detectado: $PACKAGE_MANAGER"
+
+# Instalar dependências com base no gerenciador de pacotes
+if [[ "$PACKAGE_MANAGER" == "apt" ]]; then
+    echo "Instalando dependências com apt..."
+    sudo apt update
+    sudo apt install -y procps build-essential curl file git
+elif [[ "$PACKAGE_MANAGER" == "pacman" ]]; then
+    echo "Instalando dependências com pacman..."
+    sudo pacman -Syu --noconfirm base-devel curl file git procps-ng
+fi
+
+# Instalar Homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
