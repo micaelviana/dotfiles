@@ -22,6 +22,7 @@ return {
               ["<C-k>"] = actions.move_selection_previous,
             },
           },
+		preview_cutoff = 8,
         },
         extensions = {
           media_files = {

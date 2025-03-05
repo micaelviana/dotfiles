@@ -65,7 +65,7 @@ return{
                     icon = '  ',
                     desc = 'Find Files',
                     key = 'f',
-                    action = 'Telescope frecency workspace=CWD theme=ivy'
+                    action = 'Telescope frecency workspace=CWD'
                 },
                 {
                     icon = ' 󰗊 ',
