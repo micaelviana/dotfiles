@@ -20,7 +20,7 @@ return {
               ["<C-k>"] = actions.move_selection_previous,
             },
           },
-		preview_cutoff = 8,
+		preview_cutoff = 7,
         },
         extensions = {
           media_files = {
@@ -45,6 +45,7 @@ return {
       local open_frecency = function()
         require("telescope").extensions.frecency.frecency({
           workspace = "CWD", -- Define o workspace como o diretório atual
+          path_display={"shorten"}
         })
       end
 

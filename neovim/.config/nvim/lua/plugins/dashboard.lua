@@ -65,7 +65,7 @@ return{
                     icon = '  ',
                     desc = 'Find Files',
                     key = 'f',
-                    action = 'Telescope frecency workspace=CWD'
+                    action = 'Telescope frecency workspace=CWD path_display={"shorten"} '
                 },
                 {
                     icon = ' 󰗊 ',
