@@ -51,8 +51,8 @@ return {
 
       local builtin = require("telescope.builtin")
       -- Mapeamentos de teclas
-      vim.keymap.set("n", "<space>p", open_frecency, {}) -- Usar frecency para <space>p
       vim.keymap.set("n", "tf", open_frecency, {}) -- Usar frecency para tf
+      vim.keymap.set("n", "<space>p", open_frecency, {}) -- Usar frecency para <space>p
       vim.keymap.set("n", "tb", builtin.builtin, {})
       vim.keymap.set("n", "tr", builtin.oldfiles, {})
       vim.keymap.set("n", "tg", builtin.live_grep, {})
