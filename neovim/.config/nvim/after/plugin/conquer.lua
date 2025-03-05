@@ -113,9 +113,9 @@ keyset("n", "<leader>as", "<Plug>(coc-codeaction-source)", opts)
 -- keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", opts)
 
 -- Remap keys for apply refactor code actions.
-keyset("n", "<leader>re", "<Plug>(coc-codeaction-refactor)", { silent = true })
-keyset("x", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
-keyset("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
+-- keyset("n", "<leader>re", "<Plug>(coc-codeaction-refactor)", { silent = true })
+-- keyset("x", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
+-- keyset("n", "<leader>r", "<Plug>(coc-codeaction-refactor-selected)", { silent = true })
 
 -- Run the Code Lens actions on the current line
 keyset("n", "<leader>cl", "<Plug>(coc-codelens-action)", opts)
@@ -175,15 +175,16 @@ keyset("n", "<space>d", ":<C-u>CocList diagnostics<cr>", opts)
 -- Manage extensions
 -- keyset("n", "<space>e", ":<C-u>CocList extensions<cr>", opts)
 -- Show commands
-keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
+-- keyset("n", "<space>c", ":<C-u>CocList commands<cr>", opts)
+keyset('n','<space>rf',':CocCommand workspace.renameCurrentFile<cr>',{silent=true,noremap=true})
 -- Find symbol of current document
-keyset("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
+-- keyset("n", "<space>o", ":<C-u>CocList outline<cr>", opts)
 -- Do default action for next item
-keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
+-- keyset("n", "<space>j", ":<C-u>CocNext<cr>", opts)
 -- Do default action for previous item
-keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
+-- keyset("n", "<space>k", ":<C-u>CocPrev<cr>", opts)
 -- Resume latest coc list
-keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
+-- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
 
 vim.g.coc_global_extensions = {'coc-pairs','coc-snippets','coc-json','coc-sh','coc-sumneko-lua' ,'coc-clangd', 'coc-pyright', 'coc-vimlsp','coc-emmet', 'coc-prettier','coc-css', 'coc-highlight','coc-html','coc-tsserver'}
