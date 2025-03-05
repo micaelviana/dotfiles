@@ -46,8 +46,6 @@ require("lazy").setup({
     { "EdenEast/nightfox.nvim",     lazy = true },
     { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
     { 'sainnhe/sonokai',            lazy = true },
-    { "rose-pine/neovim",           name = "rose-pine",  lazy = true },
-    { "rebelot/kanagawa.nvim", lazy = true },
 
     --IMPORT YOUR PLUGINS
     {import='plugins'},
