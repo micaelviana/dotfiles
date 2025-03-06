@@ -18,7 +18,7 @@ return {
               ["<C-k>"] = actions.move_selection_previous,
             },
           },
-		preview_cutoff = 7,
+		-- preview_cutoff = 10,
         },
         extensions = {
           frecency = {
