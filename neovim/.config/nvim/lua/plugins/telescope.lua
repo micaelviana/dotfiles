@@ -1,10 +1,8 @@
--- lua/plugins/telescope.lua
 return {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope-media-files.nvim",
       "nvim-telescope/telescope-frecency.nvim",
       "nvim-tree/nvim-web-devicons", -- Para ícones
     },
@@ -23,14 +21,9 @@ return {
 		preview_cutoff = 7,
         },
         extensions = {
-          media_files = {
-            -- Configurações específicas para media_files
-            filetypes = { "png", "jpg", "mp4", "webm", "pdf" },
-            find_cmd = "rg", -- Comando usado para encontrar arquivos
-          },
           frecency = {
             -- Configurações específicas para frecency
-            show_scores = true,
+            show_scores = false,
             show_unindexed = true,
             ignore_patterns = { "*.git/*", "*/tmp/*" },
           },
@@ -38,7 +31,6 @@ return {
       })
 
       -- Carregar extensões
-      telescope.load_extension("media_files")
       telescope.load_extension("frecency")
 
       -- Função para abrir o frecency com workspace=CWD
