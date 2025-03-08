@@ -50,7 +50,7 @@ return{
     -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
   },
   config = function ()
-      vim.keymap.set("n","<S-t>","<cmd>Neotree toggle<CR>",{noremap=true,silent=true,desc="Toggle Neotree sidebar"})
+      vim.keymap.set("n","<S-t>","<cmd>Neotree toggle dir=%:p:h:h<CR>",{noremap=true,silent=true,desc="Toggle Neotree sidebar"})
   end
 },
 } --end return
