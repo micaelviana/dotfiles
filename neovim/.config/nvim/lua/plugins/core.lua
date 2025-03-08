@@ -1,15 +1,6 @@
 return {
     -- coc
 {'neoclide/coc.nvim',branch = 'release',},
-    {
-        "nvim-tree/nvim-tree.lua",
-        version = "*",
-        opts={},
-        dependencies = {
-            "nvim-tree/nvim-web-devicons",
-        },
-    },
-
 -- install with yarn or npm
 {
   "iamcco/markdown-preview.nvim",
