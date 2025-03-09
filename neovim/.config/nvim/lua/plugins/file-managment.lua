@@ -1,24 +1,4 @@
 return{
---  NEOTREE
-{
-  "nvim-neo-tree/neo-tree.nvim",
-  branch = "v3.x",
-  dependencies = {
-    "nvim-lua/plenary.nvim",
-    "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
-    "MunifTanjim/nui.nvim",
-    -- {"3rd/image.nvim", opts = {}}, -- Optional image support in preview window: See `# Preview Mode` for more information
-  },
-  opts={
-      filesystem = {
-      hijack_netrw_behavior = "disabled"
-    }
-  },
-  config = function ()
-      vim.keymap.set("n","<S-t>","<cmd>Neotree toggle dir=%:p:h:h<CR>",{noremap=true,silent=true,desc="Toggle Neotree sidebar"})
-  end
-},
-{
   "mikavilpas/yazi.nvim",
   event = "VeryLazy",
   dependencies = { "folke/snacks.nvim", lazy = true },
@@ -56,5 +36,4 @@ return{
     -- vim.g.loaded_netrw = 1
     vim.g.loaded_netrwPlugin = 1
   end,
-},
-} --end return
+}
