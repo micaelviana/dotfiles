@@ -98,6 +98,8 @@ nnoremap <silent> \z :xa <cr>
 nnoremap <silent> Q :qa!<cr> 
 "make executable
 nnoremap <silent><space>x :!chmod +x %<cr>
+"close Split
+nnoremap <silent> <space>e :close<cr>
 "paste in insert mode using Ctrl+V
 inoremap<c-v> <esc>pa
 "go to normal mode

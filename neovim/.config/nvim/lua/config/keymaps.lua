@@ -36,12 +36,14 @@ keyset('n', 'Q', ':qa!<cr>', { silent = true, noremap = true })
 -- Make executable
 keyset('n', '<space>x', ':!chmod +x %<cr>', { silent = true, noremap = true })
 
+--Close Split
+vim.keymap.set('n','<space>e',':close<cr>',{noremap=true,silent=true})
+
 -- Paste in insert mode using Ctrl+V
 keyset('i', '<c-v>', '<esc>pa', { noremap = true })
 
 -- Go to normal mode
-keyset('n', 'e', ':', { noremap = true })
-keyset('v', 'e', ':', { noremap = true })
+keyset({'n','v'}, 'e', ':', { noremap = true })
 
 -- Select all
 keyset('n', '\\a', 'ggVG', { noremap = true })
