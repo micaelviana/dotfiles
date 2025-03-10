@@ -49,12 +49,12 @@ return {
 --Here
       vim.keymap.set('n','<space>h',function ()
           vim.cmd('split')
-	  vim.cmd('Telescope find_files')
+          open_frecency()
       end,{noremap=true,silent=true,desc=''})
 
       vim.keymap.set('n','<space>v',function ()
           vim.cmd('vsplit')
-	  vim.cmd('Telescope find_files')
+          open_frecency()
       end,{noremap=true,silent=true,desc=''})
     end,
   },
