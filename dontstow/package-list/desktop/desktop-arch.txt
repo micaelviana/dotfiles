@@ -42,7 +42,6 @@ vagrant
 virtualbox
 visual-studio-code-bin
 vlc
-wezterm-git
 wget
 xdg-utils
 yazi
