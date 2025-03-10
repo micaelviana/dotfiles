@@ -16,8 +16,8 @@ keyset('n', '\\q', ':xa<cr>', { silent = true, noremap = true })
 keyset('n', '\\z', ':xa<cr>', { silent = true, noremap = true })
 
 --Splits
-keyset('n','<space>h','<cmd>sp<cr>',opts)
-keyset('n','<space>v','<cmd>vsp<cr>',opts)
+-- keyset('n','<space>h','<cmd>sp<cr>',opts)
+-- keyset('n','<space>v','<cmd>vsp<cr>',opts)
 
 
 --Move line up and down

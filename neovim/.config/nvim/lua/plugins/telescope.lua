@@ -1,15 +1,16 @@
+-- I want to create a keymap to split Vim horizontally, followed by the Telescope file picker to choose the file I want to work with. But this is not working. The split happens, but the Telescope doesn't show.
+-- Below is my telescope config:
 return {
   {
     "nvim-telescope/telescope.nvim",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-frecency.nvim",
-      "nvim-tree/nvim-web-devicons", -- Para ícones
+      "nvim-tree/nvim-web-devicons", -- For icons
     },
     config = function()
       local telescope = require("telescope")
       local actions = require("telescope.actions")
-
       telescope.setup({
         defaults = {
           mappings = {
@@ -18,36 +19,38 @@ return {
               ["<C-k>"] = actions.move_selection_previous,
             },
           },
-		-- preview_cutoff = 10,
+        -- preview_cutoff = 10,
         },
         extensions = {
           frecency = {
-            -- Configurações específicas para frecency
+            -- Specific settings for frecency
             show_scores = false,
             show_unindexed = true,
-            ignore_patterns = { "*.git/*", "*/tmp/*" },
+            ignore_patterns = { ".git/", "/tmp/" },
           },
         },
       })
-
-      -- Carregar extensões
+      -- Load extensions
       telescope.load_extension("frecency")
-
-      -- Função para abrir o frecency com workspace=CWD
+      -- Function to open frecency with workspace=CWD
       local open_frecency = function()
         require("telescope").extensions.frecency.frecency({
-          workspace = "CWD", -- Define o workspace como o diretório atual
+          workspace = "CWD", -- Set the workspace to the current directory
           path_display={"shorten"}
         })
       end
-
       local builtin = require("telescope.builtin")
-      -- Mapeamentos de teclas
-      vim.keymap.set("n", "tf", open_frecency, {}) -- Usar frecency para tf
-      vim.keymap.set("n", "<space>p", open_frecency, {}) -- Usar frecency para <space>p
+      -- Key mappings
+      vim.keymap.set("n", "tf", open_frecency, {}) -- Use frecency for tf
+      vim.keymap.set("n", "<space>p", open_frecency, {}) -- Use frecency for <space>p
       vim.keymap.set("n", "tb", builtin.builtin, {})
       vim.keymap.set("n", "tr", builtin.oldfiles, {})
       vim.keymap.set("n", "tg", builtin.live_grep, {})
+--Here
+      vim.keymap.set('n','<space>h',function ()
+          vim.cmd('split')
+	  vim.cmd('Telescope find_files')
+      end,{noremap=true,silent=true,desc=''})
     end,
   },
 }
