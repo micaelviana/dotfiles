@@ -21,6 +21,9 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+local colorscheme_repo = "catppuccin/nvim"
+local colorscheme_name = "catppuccin-macchiato"
+
 -- Setup lazy.nvim
 require("lazy").setup({
     change_detection = { notify = false },
@@ -31,27 +34,30 @@ require("lazy").setup({
     spec = {
 
         --colorschemes
-{
-  "folke/tokyonight.nvim",
-  lazy = false,
-  priority = 1000,
-    config = function ()
-        vim.cmd.colorscheme('tokyonight-storm')
-    end,
-  opts = {},
-},
-
   -- the colorscheme should be available when starting Neovim
     {'sainnhe/everforest',name = 'everforest', lazy=true},
     { "EdenEast/nightfox.nvim",     lazy = true },
     { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
     { 'sainnhe/sonokai',            lazy = true },
+    {"folke/tokyonight.nvim", lazy=true},
+    { "catppuccin/nvim", name = "catppuccin", lazy=true},
+
+        --selected one
+{
+  colorscheme_repo,
+  lazy = false,
+  priority = 1000,
+    config = function ()
+        vim.cmd.colorscheme(colorscheme_name)
+    end,
+  opts = {},
+},
 
     --IMPORT YOUR PLUGINS
     {import='plugins'},
     },
 -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "tokyonight-storm" } },
+  install = { colorscheme = { colorscheme_name} },
 })
 
