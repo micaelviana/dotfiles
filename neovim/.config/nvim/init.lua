@@ -1,5 +1,5 @@
 require('config.lazy')
 require('config.autocommands')
 require('config.commands')
-require('config.keymaps')
+require('config.mappings')
 require('config.options')
