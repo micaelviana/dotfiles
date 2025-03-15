@@ -9,6 +9,7 @@
     "Lua.diagnostics.globals" : ["vim"],
     "snippets.userSnippetsDirectory": "~/.config/nvim/coc/ultisnips",
     "colors.enable": true,
+    "inlayHint.enable": false,
     "powershell.integratedConsole.showOnStartup": false,
     "coc.preferences.formatOnSaveFiletypes": ["css", "markdown"],
     "suggest.noselect": false,
