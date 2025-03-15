@@ -41,6 +41,7 @@ set number relativenumber "Display line numbers
 set cursorline "highlit cursor line
 set mouse=a "enable mouse interaction
 set ignorecase "disable case sensitive in search and commands
+set smartcase
 set splitright splitbelow "define which way the splits open
 set clipboard+=unnamedplus "Copy/paste between vim and other programs.
 "indentation
