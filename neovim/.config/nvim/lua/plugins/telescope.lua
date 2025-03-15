@@ -47,12 +47,12 @@ return {
       vim.keymap.set("n", "tr", builtin.oldfiles, {})
       vim.keymap.set("n", "tg", builtin.live_grep, {})
 --Here
-      vim.keymap.set('n','<space>h',function ()
+      vim.keymap.set('n','<space>sh',function ()
           vim.cmd('split')
           open_frecency()
       end,{noremap=true,silent=true,desc=''})
 
-      vim.keymap.set('n','<space>v',function ()
+      vim.keymap.set('n','<space>sv',function ()
           vim.cmd('vsplit')
           open_frecency()
       end,{noremap=true,silent=true,desc=''})
