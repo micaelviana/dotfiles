@@ -11,20 +11,6 @@ return {
   end,
   ft = { "markdown" },
 },
-
-    {
-        'https://github.com/nvim-pack/nvim-spectre',
-        lazy=true,
-            keys={
-
-                { '<leader>S', '<cmd>lua require("spectre").toggle()<CR>', {desc = "Toggle Spectre"}},
-                { '<leader>sw', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', {desc = "Search current word"}},
-                { '<leader>sw', '<esc><cmd>lua require("spectre").open_visual()<CR>', {desc = "Search current word"}},
-                {'<leader>sp', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', {desc = "Search on current file"}},
-            },--end keys
-    },
-
-
     'nvim-lua/plenary.nvim',
     "nvim-treesitter/nvim-treesitter",
 
@@ -36,7 +22,7 @@ return {
     {
     "karb94/neoscroll.nvim",
     opts={}
-    },
+        },
     'https://github.com/haya14busa/is.vim',
     'https://github.com/honza/vim-snippets',
     { 'https://github.com/lambdalisue/vim-suda', event = 'VeryLazy' },
