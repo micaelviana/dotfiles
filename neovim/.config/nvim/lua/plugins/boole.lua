@@ -1,6 +1,6 @@
 return {
   'nat-418/boole.nvim',
-  event = 'BufEnter',
+  event = 'VeryLazy',
   opts = {
     mappings = {
       increment = '<C-a>',
