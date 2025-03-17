@@ -9,11 +9,15 @@ keyset('n', '<return>', 'o<esc>', { noremap = true })
 
 
 -- Save and close
-keyset('n', '<leader>w', ':w<cr>', { silent = true, noremap = true })
-keyset('n', '<leader>q', ':xa<cr>', { silent = true, noremap = true })
-keyset('n', '\\w', ':w<cr>', { silent = true, noremap = true })
-keyset('n', '\\q', ':xa<cr>', { silent = true, noremap = true })
-keyset('n', '\\z', ':xa<cr>', { silent = true, noremap = true })
+keyset('n', '<leader>w', ':w<cr>', opts)
+keyset('n', '<leader>q', ':xa<cr>', opts)
+keyset('n', '\\w', ':w<cr>', opts)
+keyset('n', '\\q', ':xa<cr>', opts)
+keyset('n', '\\z', ':xa<cr>', opts)
+
+-- Splits
+keyset('n', '<leader>sh', ':split<cr>', opts)
+keyset('n', '<leader>sv', ':vsplit<cr>', opts)
 
 --Move line up and down
 vim.keymap.set('n',"<leader>mk", ":m .-2<CR>==", { desc = "Move Line Up in Normal Mode" })
