@@ -59,19 +59,19 @@ return{
                     icon = ' 󰁯 ',
                     desc = 'Recent Files',
                     key = 'r',
-                    action = 'Telescope oldfiles'
+                    action = 'lua Snacks.picker.recent()'
                 },
                 {
                     icon = '  ',
                     desc = 'Find Files',
                     key = 'f',
-                    action = 'Telescope frecency workspace=CWD path_display={"shorten"} '
+                    action = "lua Snacks.picker.smart()"
                 },
                 {
                     icon = ' 󰗊 ',
                     desc = 'Grep text',
                     key = 'g',
-                    action = 'Telescope live_grep'
+                    action = 'lua Snacks.picker.grep()'
                 },
                 {
                     icon = ' 󰜎 ',
