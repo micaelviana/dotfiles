@@ -45,11 +45,11 @@ set smartcase
 set splitright splitbelow "define which way the splits open
 set clipboard+=unnamedplus "Copy/paste between vim and other programs.
 "indentation
-set autoindent
-set expandtab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
+set expandtab
+set autoindent
 
 "When and how to draw the signcolumn.
 set signcolumn=yes
@@ -123,16 +123,14 @@ noremap <Del> "_x
 
 
 "Splits
-nnoremap <silent> <space>h <cmd>sp<cr>
-nnoremap <silent> <space>v <cmd>vsp<cr>
+nnoremap <silent> <space>sh <cmd>sp<cr>
+nnoremap <silent> <space>sv <cmd>vsp<cr>
 
 
 
 "Move line up and down
-nnoremap <leader>mk :m .-2<CR>==
-nnoremap <leader>mj :m .+1<CR>==
-vnoremap<leader>mk :m '<-2<CR>gv=gv
-vnoremap <leader>mj :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+vnoremap J :m '>+1<CR>gv=gv
 
 "Persistent indentation on visual mode
 vnoremap <silent> < <gv 

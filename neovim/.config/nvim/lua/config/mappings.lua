@@ -20,10 +20,8 @@ keyset('n', '<leader>sh', ':split<cr>', opts)
 keyset('n', '<leader>sv', ':vsplit<cr>', opts)
 
 --Move line up and down
-vim.keymap.set('n',"<leader>mk", ":m .-2<CR>==", { desc = "Move Line Up in Normal Mode" })
-vim.keymap.set('n',"<leader>mj", ":m .+1<CR>==", { desc = "Move Line Down in Normal Mode" })
-vim.keymap.set('v',"<leader>mk", ":m '<-2<CR>gv=gv", { desc = "Move Line Up in Visual Mode" })
-vim.keymap.set('v',"<leader>mj", ":m '>+1<CR>gv=gv", { desc = "Move Line Down in Visual Mode" })
+vim.keymap.set('v',"K", ":m '<-2<CR>gv=gv", { desc = "Move Line Up in Visual Mode" })
+vim.keymap.set('v',"J", ":m '>+1<CR>gv=gv", { desc = "Move Line Down in Visual Mode" })
 
 -- Persistent indentation on visual mode
 keyset('v','<','<gv',opts)
