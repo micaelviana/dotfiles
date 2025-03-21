@@ -26,5 +26,7 @@ return {
     -- find
     { "tp", function() Snacks.picker.projects() end, desc = "Projects" },
     { "tr", function() Snacks.picker.recent() end, desc = "Recent" },
+    --Other
+    { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
   }
 }
