@@ -23,9 +23,10 @@ return {
    keys = {
     { "tf", function() Snacks.picker.smart() end, desc = "Smart Find Files" },
     { "tg", function() Snacks.picker.grep() end, desc = "Grep" },
-    -- find
     { "tp", function() Snacks.picker.projects() end, desc = "Projects" },
     { "tr", function() Snacks.picker.recent() end, desc = "Recent" },
+    { "th", function() Snacks.picker.help() end, desc = "Help pages" },
+    { "th", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
     --Other
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
   }
