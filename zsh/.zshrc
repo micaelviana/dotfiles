@@ -31,6 +31,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 #Common aliases
 alias vi="nvim"
 alias vid="nvim ."
+alias vif="nvim +GoToFile"
 alias c="clear"
 alias py="python"
 alias cdf="zi"

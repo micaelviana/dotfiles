@@ -1,5 +1,0 @@
-#!/usr/bin/env bash
-# Interactive file explorer for Neovim that excludes binary files
-# Lists all files (including hidden ones) except binaries and excludes specific directories
-# Uses fd for file listing, file for type detection, and fzf for interactive selection
-fd --type f --hidden --exclude .git --exclude .vscode --exclude node_modules --print0 | xargs -0 file | grep -v "executable\|shared object\|ELF\|binary" | cut -d ':' -f1 | tr '\n' '\0' | fzf --layout=reverse --height=50% --read0 --print0 --exit-0 | xargs -r -0 nvim
