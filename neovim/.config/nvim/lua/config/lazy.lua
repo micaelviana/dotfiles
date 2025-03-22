@@ -40,7 +40,6 @@ require("lazy").setup({
     { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
     { 'sainnhe/sonokai',            lazy = true },
     {"folke/tokyonight.nvim", lazy=true},
-    { "catppuccin/nvim", name = "catppuccin", lazy=true},
     {'sainnhe/gruvbox-material', lazy=true},
 
         --selected one
