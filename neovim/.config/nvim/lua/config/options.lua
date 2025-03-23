@@ -23,6 +23,7 @@ opt.termguicolors=true
 opt.backup=false
 opt.writebackup=false
 opt.swapfile=false
+opt.showmode=false
 
 -- Sync clipboard between OS and Neovim.
 --  Schedule the setting after `UiEnter` because it can increase startup-time.

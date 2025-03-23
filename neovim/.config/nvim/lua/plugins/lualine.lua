@@ -20,17 +20,11 @@ return {
             }
         },
         sections = {
-            lualine_a = { 'g:coc_status', 'bo:filetype' },
-            lualine_b = { 'branch', 'diagnostics' },
-            lualine_c = {
-                {
-                    "filename",
-                    file_status = true,
-                    path = 1 -- 0 = just filename, 1 = relative path, 2 = absolute path
-                },
-            },
+            lualine_a = {'mode'},
+            lualine_b = { 'g:coc_status','branch', 'diagnostics' },
+            lualine_c = {"filename"},
             lualine_x = { 'encoding', 'fileformat', 'filetype' },
-            lualine_y = { 'progress' },
+            lualine_y = {},
             lualine_z = { 'location' }
         },
         inactive_sections = {
