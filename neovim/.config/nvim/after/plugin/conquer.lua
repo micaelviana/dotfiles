@@ -1,4 +1,5 @@
 -- https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.lua
+-- Conquer is my best friend
 
 -- Some servers have issues with backup files, see #649
 vim.opt.backup = false
