@@ -5,6 +5,7 @@ return {
   ---@type oil.SetupOpts
   opts = {
     view_options = { show_hidden = true },
+    default_file_explorer = true,
   },
   keys = {
     {
@@ -15,4 +16,5 @@ return {
       desc = 'Open parent directory with oil',
     },
   },
+  lazy=false
 }
