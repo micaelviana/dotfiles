@@ -74,7 +74,7 @@ augroup OpenImages
 augroup END
 "---------------COMMANDS
 "remove M^ characters
-command WindowsCleaning %s/\r/
+command! WindowsCleaning %s/\r/
 
 "---------------FUNCTIONS
 "command to change the working directory to the directory of the current file
@@ -97,6 +97,7 @@ nnoremap <silent> \q :xa <cr>
 nnoremap <silent> \z :xa <cr>
 "Close without save
 nnoremap <silent> Q :qa!<cr> 
+nnoremap <silent> <space>a ggVG
 "make executable
 nnoremap <silent><space>x :!chmod +x %<cr>
 "close Split
@@ -108,6 +109,8 @@ nnoremap e :
 vnoremap e :
 "select all
 nnoremap \a ggVG
+"set filetype
+nnoremap <leader>sf :set filetype=
 "increment/decrement
 nnoremap + <c-a>
 nnoremap - <c-x>

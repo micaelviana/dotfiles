@@ -7,6 +7,11 @@ vim.g.mapleader = " "
 -- New lines
 keyset('n', '<return>', 'o<esc>', { noremap = true })
 
+--Select all
+vim.keymap.set('n','<leader>a','ggVG',{noremap=true,silent=true})
+
+--Set filetype
+vim.keymap.set('n','<leader>sf',':set filetype=',{noremap=true,silent=false})
 
 -- Save and close
 keyset('n', '<leader>w', ':w<cr>', opts)
