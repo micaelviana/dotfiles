@@ -1,4 +1,2 @@
-[master cd1c189] nvim: rename file, core-
- 2 files changed, 47 insertions(+)
- create mode 100644 neovim/.config/nvim/lua/plugins/miscellaneous.lua
- create mode 100644 neovim/.config/nvim/miscellaneous
+[master d05fa09] nvim: rename file, core-
+ 1 file changed, 4 insertions(+), 3 deletions(-)
