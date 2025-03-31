@@ -26,6 +26,7 @@ return {
     { "tr", function() Snacks.picker.recent() end, desc = "Recent" },
     { "th", function() Snacks.picker.help() end, desc = "Help pages" },
     { "tk", function() Snacks.picker.keymaps() end, desc = "Keymaps" },
+    { "tb", function() Snacks.picker.buffers() end, desc = "Buffers" },
     --Other
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
   }

@@ -5,7 +5,7 @@ return{
   -- or if using mini.icons/mini.nvim
   -- dependencies = { "echasnovski/mini.icons" },
   keys={
-    {'tb','<cmd>FzfLua builtin<cr>'},
+    {'<space>b','<cmd>FzfLua builtin<cr>'},
   },
   opts = {}
 }
