@@ -13,6 +13,7 @@ man-db
 man-pages
 nano
 net-tools
+python-is-python3
 ripgrep
 shellcheck
 sshfs

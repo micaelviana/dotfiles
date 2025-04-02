@@ -462,6 +462,7 @@ publicsuffix
 pyflakes3
 python-apt-common
 python-babel-localedata
+python-is-python3
 python3
 python3-anyio
 python3-apport
