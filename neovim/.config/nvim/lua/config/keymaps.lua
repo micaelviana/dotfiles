@@ -62,9 +62,9 @@ keyset('i', '<c-bs>', '<c-w>', { noremap = true })
 keyset('i', '<c-h>', '<c-w>', { noremap = true })
 
 -- Prevent x from overriding what's in the clipboard
-keyset('n', 'x', '"_x', { noremap = true })
-keyset('n', 'X', '"_x', { noremap = true })
-keyset('n', '<del>', '"_x', { noremap = true })
+keyset({'n','v'}, 'x', '"_x', { noremap = true })
+keyset({'n','v'}, 'X', '"_x', { noremap = true })
+keyset({'n','v'}, '<del>', '"_x', { noremap = true })
 
 -- Keymap to change the working directory to the directory of the current file
 vim.keymap.set('n', '<space>z', function ()
