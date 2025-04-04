@@ -53,34 +53,39 @@ return{
                     icon = '  ',
                     desc = 'New File',
                     key = 'n',
-                    action = 'enew'
+                    action = 'enew',
+                    key_format = '%s', -- `%s` will be substituted with value of `key`
                 },
                 {
                     icon = ' 󰁯 ',
                     desc = 'Recent Files',
                     key = 'r',
-                    action = 'lua Snacks.picker.recent()'
+                    action = 'lua Snacks.picker.recent()',
+                    key_format = '%s', -- `%s` will be substituted with value of `key`
                 },
                 {
                     icon = '  ',
                     desc = 'Find Files',
                     key = 'f',
-                    action = "lua Snacks.picker.smart()"
+                    action = "lua Snacks.picker.smart()",
+                    key_format = '%s', -- `%s` will be substituted with value of `key`
                 },
                 {
                     icon = ' 󰗊 ',
                     desc = 'Grep text',
                     key = 'g',
-                    action = 'lua Snacks.picker.grep()'
+                    action = 'lua Snacks.picker.grep()',
+                    key_format = '%s', -- `%s` will be substituted with value of `key`
                 },
                 {
                     icon = ' 󰜎 ',
                     desc = 'Quit neovim',
                     key = 'q',
-                    action = 'quit'
+                    action = 'quit',
+                    key_format = '%s', -- `%s` will be substituted with value of `key`
                 }
             },
             footer = {}
-        }
+        },
     }--end opts
 } -- end table
