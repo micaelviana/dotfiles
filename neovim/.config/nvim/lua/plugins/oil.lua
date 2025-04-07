@@ -18,7 +18,7 @@
   --   ["g\\"] = { "actions.toggle_trash", mode = "n" },
 return {
   'stevearc/oil.nvim',
-  lazy=false
+  lazy=false,
   dependencies = { 'nvim-tree/nvim-web-devicons' },
   ---@module 'oil'
   ---@type oil.SetupOpts
