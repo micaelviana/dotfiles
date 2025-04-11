@@ -1,3 +1,4 @@
+-- config from Adib Hanna
 return{
     "utilyre/barbecue.nvim",
     name = "barbecue",
