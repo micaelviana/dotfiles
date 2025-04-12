@@ -21,8 +21,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local colorscheme_repo = "sainnhe/gruvbox-material"
-local colorscheme_name = "gruvbox-material"
+local colorscheme_repo = "olivercederborg/poimandres.nvim"
+local colorscheme_name = "poimandres"
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -41,7 +41,7 @@ require("lazy").setup({
     { 'sainnhe/sonokai',            lazy = true },
     {"folke/tokyonight.nvim", lazy=true},
     {'sainnhe/gruvbox-material', lazy=true},
-
+    {'olivercederborg/poimandres.nvim', lazy=true},
         --selected one
 {
   colorscheme_repo,
