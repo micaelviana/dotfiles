@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo -e "a\n*\nq\n"|git add -i

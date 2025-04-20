@@ -1,0 +1,52 @@
+{
+    "languageserver": {
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"]
+        },
+        "prolog-lsp": {
+            "command": "swipl",
+            "args": ["-g", "use_module(library(lsp_server)).",
+                     "-g", "lsp_server:main",
+                     "-t", "halt",
+                     "--", "stdio"
+                    ],
+            "filetypes": ["prolog"]
+          },
+    },
+    "Lua.diagnostics.globals" : ["vim"],
+    "snippets.userSnippetsDirectory": "~/.config/nvim/coc/ultisnips",
+    "colors.enable": true,
+    "inlayHint.enable": false,
+    "suggest.noselect": false,
+    "snippets.ultisnips.pythonPrompt": false,
+    "suggest.completionItemKindLabels": {
+        "method": "  ",
+        "function": "  ",
+        "variable": "  ",
+        "field": " ﰠ ",
+        "typeParameter": " <T> ",
+        "constant": "  ",
+        "class": " ﴯ ",
+        "interface": "  ",
+        "struct": " פּ ",
+        "event": "  ",
+        "operator": " ",
+        "module": "  ",
+        "property": " ﰠ ",
+        "enum": "  ",
+        "reference": "  ",
+        "keyword": "  ",
+        "file": "  ",
+        "folder": "  ",
+        "color": "  ",
+        "unit": " 塞 ",
+        "snippet": "  ",
+        "text": "  ",
+        "constructor": "  ",
+        "value": "  ",
+        "enumMember": "  ",
+        "default": "  "
+    }
+}

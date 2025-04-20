@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+# Lista dos itens para iterar
+items=(gitconfig neovim tmux utilities vim zsh)
+
+# Loop para iterar sobre a lista
+for i in "${items[@]}"; do
+    stow -D "$i" -t ~ --verbose
+    stow "$i" -t ~ --verbose
+done

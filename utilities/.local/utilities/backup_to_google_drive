@@ -1,0 +1,28 @@
+#!/bin/bash
+
+# Verifica se o primeiro argumento foi fornecido
+if [ "$#" -lt 1 ]; then
+    echo "Uso: $0 arquivo1 arquivo2..."
+    exit 1
+fi
+
+# Define o diretório de destino
+TARGET_DIR="/mnt/g/Meu Drive/"
+
+# Loop através de todos os argumentos passados
+for FILE in "$@"; do
+    # Extrai o nome base do arquivo
+    BASE_NAME=$(basename "$FILE")
+    
+    # Gera o nome do arquivo de destino com a data e hora atual como sufixo
+    DATE_TIME_SUFFIX=$(date +%Y%m%d%H%M%S)
+    DEST_FILE="${BASE_NAME}_${DATE_TIME_SUFFIX}"
+    
+    # Constrói o caminho completo do arquivo de destino
+    DEST_PATH="${TARGET_DIR}${DEST_FILE}"
+    
+    # Copia o arquivo para o diretório de destino
+    cp "$FILE" "$DEST_PATH"
+done
+
+echo "Backup concluído."

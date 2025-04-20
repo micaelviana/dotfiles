@@ -1,0 +1,22 @@
+#!/bin/bash
+
+if [ -f /etc/os-release ]; then
+    . /etc/os-release
+    OS=$NAME
+else
+    OS=$(uname -s)
+fi
+
+case $OS in
+    "Ubuntu"|"Debian GNU/Linux")
+        while read -r package; do
+            sudo nala install -y $package || echo "Package $package not found."
+        done < desktop-ubuntu.txt
+        ;;
+    "Arch Linux")
+        yay -S --noconfirm --needed - < desktop-arch.txt        
+        ;;
+    *)
+        echo "Error"
+        ;;
+esac

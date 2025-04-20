@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+[ -z "$TMUX"  ] && { tmux attach || tmux new-session -s $(basename "$PWD"); }
