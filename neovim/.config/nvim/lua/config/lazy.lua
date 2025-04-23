@@ -41,16 +41,17 @@ require("lazy").setup({
     { 'sainnhe/sonokai',            lazy = true },
     {"folke/tokyonight.nvim", lazy=true},
     { "rebelot/kanagawa.nvim", lazy=true},
-        --selected one
-{
-  colorscheme_repo,
-  lazy = false,
-  priority = 1000,
-    config = function ()
-        vim.cmd.colorscheme(colorscheme_name)
-    end,
-  opts = {},
-},
+
+    --selected one
+    {
+      colorscheme_repo,
+      lazy = false,
+      priority = 1000,
+        config = function ()
+            vim.cmd.colorscheme(colorscheme_name)
+        end,
+      opts = {},
+    },
 
     --IMPORT YOUR PLUGINS
     {import='plugins'},
