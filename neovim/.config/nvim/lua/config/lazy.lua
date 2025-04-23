@@ -21,8 +21,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local colorscheme_repo = "olivercederborg/poimandres.nvim"
-local colorscheme_name = "poimandres"
+local colorscheme_repo = "rebelot/kanagawa.nvim"
+local colorscheme_name = "kanagawa-dragon"
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -36,12 +36,11 @@ require("lazy").setup({
         --colorschemes
   -- the colorscheme should be available when starting Neovim
     {'sainnhe/everforest',name = 'everforest', lazy=true},
-    { "EdenEast/nightfox.nvim",     lazy = true },
+    { "EdenEast/nightfox.nvim",     lazy = true }, --collection 
     { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
     { 'sainnhe/sonokai',            lazy = true },
     {"folke/tokyonight.nvim", lazy=true},
-    {'sainnhe/gruvbox-material', lazy=true},
-    {'olivercederborg/poimandres.nvim', lazy=true},
+    { "rebelot/kanagawa.nvim", lazy=true},
         --selected one
 {
   colorscheme_repo,
