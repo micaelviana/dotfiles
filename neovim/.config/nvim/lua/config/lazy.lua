@@ -33,8 +33,7 @@ require("lazy").setup({
     },
     spec = {
 
-        --colorschemes
-  -- the colorscheme should be available when starting Neovim
+    --colorschemes
     {'sainnhe/everforest',name = 'everforest', lazy=true},
     { "EdenEast/nightfox.nvim",     lazy = true }, --collection 
     { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
