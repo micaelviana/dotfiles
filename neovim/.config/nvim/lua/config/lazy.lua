@@ -21,8 +21,8 @@ vim.opt.rtp:prepend(lazypath)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-local colorscheme_repo = "rebelot/kanagawa.nvim"
-local colorscheme_name = "kanagawa-dragon"
+local colorscheme_repo = "EdenEast/nightfox.nvim"
+local colorscheme_name = "nightfox"
 
 -- Setup lazy.nvim
 require("lazy").setup({
@@ -39,7 +39,6 @@ require("lazy").setup({
     { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
     { 'sainnhe/sonokai',            lazy = true },
     {"folke/tokyonight.nvim", lazy=true},
-    { "rebelot/kanagawa.nvim", lazy=true},
 
     --selected one
     {
