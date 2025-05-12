@@ -7,7 +7,7 @@ return{
   -- dependencies = { "echasnovski/mini.icons" },
   keys={
     {'<space>bb','<cmd>FzfLua builtin<cr>'},
-    { "<space>ff", '<cmd>FzfLua files<cr>', desc = "Find Files" },
+    { "<space>f", '<cmd>FzfLua files<cr>', desc = "Find Files" },
     { "tg", '<cmd>FzfLua live_grep<cr>', desc = "Grep" },
     { "to", '<cmd>FzfLua oldfiles<cr>', desc = "Old files" },
     { "th", '<cmd>FzfLua helptags<cr>', desc = "Help pages" },
