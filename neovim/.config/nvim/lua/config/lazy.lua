@@ -22,7 +22,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 local colorscheme_repo = "EdenEast/nightfox.nvim"
-local colorscheme_name = "carbonfox"
+local colorscheme_name = "terafox"
 
 -- Setup lazy.nvim
 require("lazy").setup({
