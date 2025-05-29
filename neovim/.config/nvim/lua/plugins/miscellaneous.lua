@@ -14,6 +14,11 @@ return {
     'nvim-lua/plenary.nvim',
     "nvim-treesitter/nvim-treesitter",
 
+ {
+   "sphamba/smear-cursor.nvim",
+    opts = {},
+  },
+
     {
       'mattn/emmet-vim',
       init = function ()
