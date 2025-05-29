@@ -22,7 +22,6 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 alias nv="nvim"
 alias nvd="nvim ."
 alias nvf="nvim +GoToFile"
-alias y="yazi"
 alias tmp='cd /tmp'
 alias c="clear"
 alias py="python"
@@ -83,6 +82,16 @@ addToPathFront() {
 }
 addToPath "$HOME/.local/bin"
 addToPath "$HOME/.local/utilities"
+
+# Shell wrapper
+# We suggest using this y shell wrapper that provides the ability to change the current working directory when exiting Yazi.
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
 
 # Plugins
 plugins=(
