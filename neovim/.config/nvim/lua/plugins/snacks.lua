@@ -9,7 +9,6 @@ return {
     -- refer to the configuration section below
     bigfile = { enabled = true },
     explorer = {
-      enabled=true,
       replace_netrw = true, -- Replace netrw with the snacks explorer
     },
     quickfile = { enabled = true },
