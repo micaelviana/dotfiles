@@ -19,7 +19,7 @@ return {
     picker = { enabled = false },
     notifier = { enabled = false },
     scope = { enabled = false },
-    scroll = { enabled = false },
+    scroll = { enabled = true },
     statuscolumn = { enabled = false },
     words = { enabled = false },
   },
