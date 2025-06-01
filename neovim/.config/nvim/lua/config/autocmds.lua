@@ -12,3 +12,9 @@ vim.api.nvim_create_autocmd({"BufRead","BufEnter"},{
   command = "set filetype=prolog"
 })
 
+--Handlebars compatibility
+vim.api.nvim_create_autocmd({"BufRead","BufEnter"},{
+  pattern="*.handlebars",
+  command = "set filetype=html"
+})
+
