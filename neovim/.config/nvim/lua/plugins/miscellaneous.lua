@@ -14,6 +14,12 @@ return {
     'nvim-lua/plenary.nvim',
     "nvim-treesitter/nvim-treesitter",
 
+  --Smooth scrolling
+  {
+    "karb94/neoscroll.nvim",
+    opts = {},
+  },
+
     {
       'mattn/emmet-vim',
       init = function ()
