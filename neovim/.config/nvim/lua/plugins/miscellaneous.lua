@@ -19,6 +19,7 @@ return {
     "karb94/neoscroll.nvim",
     opts = {},
   },
+  {'mg979/vim-visual-multi'},
 
     {
       'mattn/emmet-vim',
