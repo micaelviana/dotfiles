@@ -188,4 +188,4 @@ keyset('n','<space>rf',':CocCommand workspace.renameCurrentFile<cr>',{silent=tru
 -- keyset("n", "<space>p", ":<C-u>CocListResume<cr>", opts)
 
 
-vim.g.coc_global_extensions = {'coc-pairs','coc-snippets','coc-json','coc-sh','coc-sumneko-lua' ,'coc-clangd', 'coc-pyright', 'coc-vimlsp','coc-emmet', 'coc-prettier','coc-css', 'coc-highlight','coc-html','coc-tsserver'}
+vim.g.coc_global_extensions = {'coc-pairs','coc-snippets','coc-json','coc-sh','coc-sumneko-lua' ,'coc-clangd', 'coc-pyright', 'coc-vimlsp','coc-emmet', 'coc-prettier','coc-css', 'coc-highlight','coc-html','coc-tsserver','coc-prisma'}
