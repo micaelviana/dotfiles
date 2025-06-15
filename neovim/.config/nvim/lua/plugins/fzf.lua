@@ -14,7 +14,7 @@ return{
     { "tk", '<cmd>FzfLua keymaps<cr>', desc = "Keymaps" },
     { "tb", '<cmd>FzfLua buffers<cr>', desc = "Buffers" },
   },
-  config = function () 
+  config = function ()
     --Select a file using Fuzzy finder
     vim.api.nvim_create_user_command('GoToFile','lua require("fzf-lua").files()',{})
     -- to prevent cursor for blinking
