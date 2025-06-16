@@ -26,7 +26,5 @@ return {
     --Other
     { "<leader>bd", function() Snacks.bufdelete() end, desc = "Delete Buffer" },
     { "<leader>bo", function() Snacks.bufdelete.other() end, desc = "Delete all buffers except the current one"},
-    { "<leader>e", function() Snacks.explorer() end, desc = "Open explorer" },
-
   }
 }
