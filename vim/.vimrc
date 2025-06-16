@@ -14,7 +14,6 @@ call plug#begin('~/.vim/plugged')
     "Themes
     Plug 'arcticicestudio/nord-vim' 
     Plug 'crusoexia/vim-monokai'
-    Plug 'rose-pine/vim'
     Plug 'itchyny/lightline.vim' "statusline
     "Autocomplete
     Plug 'lifepillar/vim-mucomplete'
@@ -124,12 +123,9 @@ noremap x "_x
 noremap X "_x
 noremap <Del> "_x
 
-
 "Splits
-nnoremap <silent> <space>sh <cmd>sp<cr>
-nnoremap <silent> <space>sv <cmd>vsp<cr>
-
-
+nnoremap <silent> sh <cmd>sp<cr>
+nnoremap <silent> sv <cmd>vsp<cr>
 
 "Move line up and down
 vnoremap K :m '<-2<CR>gv=gv

@@ -21,8 +21,8 @@ keyset('n', '\\q', ':xa<cr>', opts)
 keyset('n', '\\z', ':xa<cr>', opts)
 
 -- Splits
-keyset('n', '<leader>sh', ':split<cr>', opts)
-keyset('n', '<leader>sv', ':vsplit<cr>', opts)
+keyset('n', 'sh', ':split<cr>', opts)
+keyset('n', 'sv', ':vsplit<cr>', opts)
 
 --Move line up and down
 vim.keymap.set('v',"K", ":m '<-2<CR>gv=gv", { noremap=true,silent=true, desc= "Move Line Up in Visual Mode" })
