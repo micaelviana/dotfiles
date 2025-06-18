@@ -11,7 +11,8 @@ return {
   ---@module "neo-tree"
   ---@type neotree.Config?
   keys={
-    {'<space>e','<cmd>Neotree toggle reveal %:p:h:h<cr>', desc='Open sidebar', silent=true},
+    {'<space>e','<cmd>Neotree toggle<cr>', desc='Open sidebar', silent=true},
+    {'<space>E','<cmd>Neotree toggle %:p:h:h reveal<cr>', desc='Open sidebar', silent=true},
   },
   opts = {
     filesystem = {
