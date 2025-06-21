@@ -1,6 +1,7 @@
-return {
-    'numToStr/Comment.nvim',
-    opts = {},
+-- Neovim has built-in commenting support starting with version 0.10, but I will keep this if I need something more robust
+-- return {
+--     'numToStr/Comment.nvim',
+--     opts = {},
 -- config = function()
 -- local ft = require('Comment.ft')
 
@@ -12,4 +13,4 @@ return {
 
 -- ft.antlr = '//%s'
 -- end
-}
+-- }
