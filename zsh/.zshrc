@@ -19,6 +19,7 @@ eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #Aliases
 #Common aliases
+alias old="cd /home/micael/dotfiles/dontstow/oldconfig/neovim-with-coc/.config/nvim"
 alias nv="nvim"
 alias nvd="nvim ."
 alias nvf="nvim +GoToFile"
