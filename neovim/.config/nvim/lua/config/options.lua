@@ -35,9 +35,6 @@ vim.o.breakindent = true
 -- Save undo history
 vim.o.undofile = true
 
--- Decrease mapped sequence wait time
-vim.o.timeoutlen = 300
-
 -- Clear highlights on search when pressing <Esc> in normal mode
 vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
