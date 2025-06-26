@@ -108,6 +108,8 @@ nnoremap e :
 vnoremap e :
 "select all
 nnoremap sa ggVG
+"search text in normal mode
+nnoremap ss /
 "set filetype
 nnoremap <leader>sf :set filetype=
 "increment/decrement

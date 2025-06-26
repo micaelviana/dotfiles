@@ -47,6 +47,9 @@ keyset("i", "<c-v>", "<esc>pa", { noremap = true })
 -- Go to normal mode
 keyset({ "n", "v" }, "e", ":", { noremap = true })
 
+--Search
+keyset("n", "ss", "/", { noremap = true })
+
 -- Select all
 keyset("n", "\\a", "ggVG", { noremap = true })
 
