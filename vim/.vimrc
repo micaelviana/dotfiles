@@ -107,7 +107,7 @@ inoremap<c-v> <esc>pa
 nnoremap e :
 vnoremap e :
 "select all
-nnoremap \a ggVG
+nnoremap sa ggVG
 "set filetype
 nnoremap <leader>sf :set filetype=
 "increment/decrement
