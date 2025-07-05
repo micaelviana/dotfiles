@@ -104,8 +104,8 @@ nnoremap <silent> <space>e :close<cr>
 "paste in insert mode using Ctrl+V
 inoremap<c-v> <esc>pa
 "go to normal mode
-nnoremap e :
-vnoremap e :
+nnoremap se :
+vnoremap se :
 "select all
 nnoremap sa ggVG
 "search text in normal mode
