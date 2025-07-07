@@ -45,5 +45,12 @@ return {
 			end,
 			desc = "Rename File",
 		},
+		{
+			"<leader>ba",
+			function()
+				Snacks.bufdelete().all()
+			end,
+			desc = "Delete All Buffers",
+		},
 	},
 }
