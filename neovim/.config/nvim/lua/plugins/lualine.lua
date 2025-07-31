@@ -4,6 +4,7 @@ return {
     opts = {
         options = {
             icons_enabled = true,
+            theme = 'auto',
             component_separators = { left = '', right = '' },
             section_separators = { left = '', right = '' },
             disabled_filetypes = {
@@ -21,10 +22,10 @@ return {
         },
         sections = {
             lualine_a = {'mode'},
-            lualine_b = { 'g:coc_status','branch', 'diagnostics' },
+            lualine_b = {'branch', 'diagnostics' },
             lualine_c = {"filename"},
             lualine_x = { 'encoding', 'fileformat', 'filetype' },
-            lualine_y = {},
+            lualine_y = {'progress'},
             lualine_z = { 'location' }
         },
         inactive_sections = {
@@ -35,8 +36,7 @@ return {
             lualine_y = {},
             lualine_z = {}
         },
-            tabline = {
-            },
+        tabline = {},
         winbar = {},
         inactive_winbar = {},
         extensions = {}
