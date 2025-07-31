@@ -6,7 +6,7 @@ return {
 		"nvim-tree/nvim-web-devicons",
 	},
 	keys = {
-		{ "<space>e", "<cmd>NvimTreeToggle<cr>", desc = "Open sidebar", silent = true },
+		{ "<space>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "Open sidebar", silent = true },
 	},
 	config = function()
 		-- OR setup with some options
