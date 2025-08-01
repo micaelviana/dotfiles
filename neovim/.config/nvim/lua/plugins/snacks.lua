@@ -48,7 +48,9 @@ return {
 		{
 			"<leader>ba",
 			function()
-				Snacks.bufdelete().all()
+				Snacks.bufdelete.all()
+				vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
+				vim.cmd("Dashboard")
 			end,
 			desc = "Delete All Buffers",
 		},
