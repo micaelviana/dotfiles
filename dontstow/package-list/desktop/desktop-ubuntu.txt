@@ -36,7 +36,6 @@ dbus
 dbus-x11
 debconf
 debconf-i18n
-debianutils
 diffutils
 dirmngr
 distro-info
