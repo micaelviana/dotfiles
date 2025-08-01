@@ -14,7 +14,7 @@ return {
 		quickfile = { enabled = true },
 		dashboard = { enabled = false },
 		indent = { enabled = false },
-		input = { enabled = false },
+		input = { enabled = true },
 		picker = { enabled = false },
 		notifier = { enabled = false },
 		scope = { enabled = false },
