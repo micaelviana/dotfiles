@@ -45,7 +45,7 @@ return {
 
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
-					-- map("<space>rn", vim.lsp.buf.rename, "[R]e[n]ame")
+					map("<space>rn", vim.lsp.buf.rename, "[R]e[n]ame")
 
 					-- Execute a code action, usually your cursor needs to be on top of an error
 					-- or a suggestion from your LSP for this to activate.
@@ -220,7 +220,7 @@ return {
 				-- But for many setups, the LSP (`ts_ls`) will work just fine
 				-- ts_ls = {},
 				--
-
+				vimls = {},
 				lua_ls = {
 					-- cmd = { ... },
 					-- filetypes = { ... },
@@ -231,7 +231,7 @@ return {
 								callSnippet = "Replace",
 							},
 							-- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
-							-- diagnostics = { disable = { 'missing-fields' } },
+							diagnostics = { global = { "vim", "require" } },
 						},
 					},
 				},
