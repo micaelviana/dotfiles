@@ -8,9 +8,9 @@ else
 fi
 
 case $OS in
-    "Ubuntu"|"Debian GNU/Linux")
+    "Ubuntu")
         while read -r package; do
-            sudo nala install -y $package || echo "Package $package not found."
+            sudo nala install -y "$package" || echo "Package $package not found."
         done < wsl-ubuntu.txt
         ;;
     "Arch Linux")
