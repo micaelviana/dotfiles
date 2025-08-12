@@ -15,8 +15,8 @@ rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-local colorscheme_repo = "folke/tokyonight.nvim"
-local colorscheme_name = "tokyonight-storm"
+local colorscheme_repo = "sainnhe/sonokai"
+local colorscheme_name = "sonokai"
 require("lazy").setup({
 	change_detection = { notify = false },
 	checker = {
