@@ -106,8 +106,12 @@ inoremap<c-v> <esc>pa
 "go to normal mode
 nnoremap e :
 vnoremap e :
-"Go to the end of the next word
+"Go to the end of the next word(because remap)
 nnoremap <silent> se e
+"search text
+nnoremap f /
+"find character(because remap)
+nnoremap sf f
 "select all
 nnoremap sa ggVG
 "search text in normal mode

@@ -46,9 +46,13 @@ keyset("i", "<c-v>", "<esc>pa", { noremap = true })
 
 -- Go to normal mode
 keyset({ "n", "v" }, "e", ":", { noremap = true })
-
---Go to the end of the next word
+--Go to the end of the next word(because remap)
 keyset("n", "se", "e", opts)
+
+--Search text
+keyset("n", "f", "/", { noremap = true })
+--find character(because remap)
+keyset("n", "sf", "f", { noremap = true })
 
 --Search
 keyset("n", "ss", "/", { noremap = true })
