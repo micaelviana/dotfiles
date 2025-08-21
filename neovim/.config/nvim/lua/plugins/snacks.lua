@@ -15,7 +15,7 @@ return {
 		dashboard = { enabled = false },
 		indent = { enabled = false },
 		input = { enabled = true },
-		picker = { enabled = false },
+		picker = { enabled = true },
 		notifier = { enabled = false },
 		scope = { enabled = false },
 		scroll = { enabled = false },
