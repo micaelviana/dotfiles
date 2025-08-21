@@ -15,8 +15,6 @@ rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
-local colorscheme_repo = "sainnhe/sonokai"
-local colorscheme_name = "sonokai"
 require("lazy").setup({
 	change_detection = { notify = false },
 	checker = {
@@ -33,11 +31,11 @@ require("lazy").setup({
 
 		--selected one
 		{
-			colorscheme_repo,
+			"bluz71/vim-nightfly-colors",
 			lazy = false,
 			priority = 1000,
 			config = function()
-				vim.cmd.colorscheme(colorscheme_name)
+				vim.cmd.colorscheme("nightfly")
 			end,
 			opts = {},
 		},
