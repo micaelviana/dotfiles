@@ -1,1 +1,1 @@
-{"template string":{"body":"console.log(`\\${$0}`);","prefix":"template string"},"meu console":{"prefix":"meu console","body":"console.log(\"taratinos mind\")"}}
+{"expression inside console":{"body":"\\${$1}","prefix":"expression inside console"},"template string":{"body":"console.log(`\\${$0}`);","prefix":"template string"}}
