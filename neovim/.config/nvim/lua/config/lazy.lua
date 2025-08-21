@@ -25,7 +25,6 @@ require("lazy").setup({
 		--colorschemes
 		{ "sainnhe/everforest", name = "everforest", lazy = true },
 		{ "EdenEast/nightfox.nvim", lazy = true }, --collection
-		{ "bluz71/vim-nightfly-colors", name = "nightfly", lazy = true },
 		{ "sainnhe/sonokai", lazy = true },
 		{ "folke/tokyonight.nvim", lazy = true },
 
@@ -37,7 +36,6 @@ require("lazy").setup({
 			config = function()
 				vim.cmd.colorscheme("nightfly")
 			end,
-			opts = {},
 		},
 		{ import = "plugins" },
 	}, --end spec,
