@@ -2,7 +2,7 @@
 return { -- Autocompletion
 	"saghen/blink.cmp",
 	event = "VimEnter",
-	version = "1.*",
+	version = "*",
 	--- @module 'blink.cmp'
 	--- @type blink.cmp.Config
 	opts = {
@@ -50,10 +50,15 @@ return { -- Autocompletion
 			default = { "lsp", "path", "snippets", "lazydev", "buffer" },
 			providers = {
 				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
+				snippets = {
+					opts = {
+						search_paths = { "~/.config/nvim/snippets/" },
+					},
+				},
 			},
 		},
 
-		snippets = { preset = "luasnip" },
+		-- snippets = { preset = "luasnip" },
 
 		-- Blink.cmp includes an optional, recommended rust fuzzy matcher,
 		-- which automatically downloads a prebuilt binary when enabled.
@@ -67,4 +72,6 @@ return { -- Autocompletion
 		-- Shows a signature help window while you type arguments for a function
 		signature = { enabled = true },
 	},
+
+	opts_extend = { "sources.default" },
 }
