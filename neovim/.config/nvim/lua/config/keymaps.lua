@@ -46,13 +46,12 @@ keyset("i", "<c-v>", "<esc>pa", { noremap = true })
 
 -- Go to normal mode
 keyset({ "n", "v" }, "e", ":", { noremap = true })
---Go to the end of the next word(because remap)
+
+--Go to the end of the next word(because I remap the e standard command)
 keyset("n", "se", "e", opts)
 
---Search text
-keyset("n", "r", "/", { noremap = true })
---find character(because remap)
-keyset("n", "sr", "r", { noremap = true })
+--Search Text
+keyset("n", "ss", "/", { noremap = true })
 
 -- Select all
 keyset("n", "\\a", "ggVG", { noremap = true })
