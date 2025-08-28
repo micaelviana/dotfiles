@@ -109,9 +109,9 @@ vnoremap e :
 "Go to the end of the next word(because remap)
 nnoremap <silent> se e
 "search text
-nnoremap f /
+nnoremap r /
 "find character(because remap)
-nnoremap sf f
+nnoremap sr r
 "select all
 nnoremap sa ggVG
 "search text in normal mode

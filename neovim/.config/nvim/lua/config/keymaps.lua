@@ -50,12 +50,9 @@ keyset({ "n", "v" }, "e", ":", { noremap = true })
 keyset("n", "se", "e", opts)
 
 --Search text
-keyset("n", "f", "/", { noremap = true })
+keyset("n", "r", "/", { noremap = true })
 --find character(because remap)
-keyset("n", "sf", "f", { noremap = true })
-
---Search
-keyset("n", "ss", "/", { noremap = true })
+keyset("n", "sr", "r", { noremap = true })
 
 -- Select all
 keyset("n", "\\a", "ggVG", { noremap = true })
