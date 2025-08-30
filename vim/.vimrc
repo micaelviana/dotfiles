@@ -110,6 +110,9 @@ vnoremap e :
 nnoremap <silent> se e
 "search text
 nnoremap ss /
+"search text
+nnoremap f /
+nnoremap sf f
 "select all
 nnoremap sa ggVG
 "search text in normal mode

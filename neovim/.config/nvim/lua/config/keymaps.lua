@@ -51,6 +51,10 @@ keyset({ "n", "v" }, "e", ":", { noremap = true })
 keyset("n", "se", "e", opts)
 
 --Search Text
+keyset("n", "f", "/", { noremap = true })
+keyset("n", "sf", "f", { noremap = true })
+
+--Search Text
 keyset("n", "ss", "/", { noremap = true })
 
 -- Select all
