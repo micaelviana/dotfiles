@@ -45,7 +45,6 @@ vim.schedule(function()
 	opt.clipboard = "unnamedplus"
 end)
 
--- no longer need, install wl-clipboard
 -- Temporarily enabled again, wl-clipboard is not being detected
 if vim.fn.has("wsl") == 1 then
 	vim.g.clipboard = {
