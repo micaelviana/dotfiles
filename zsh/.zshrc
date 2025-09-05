@@ -68,8 +68,9 @@ alias aptre="sudo nala purge"
 #Exports
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
-export MANPAGER="sh -c 'col -bx | bat -l man -p'"
-export MANROFFOPT="-c"
+export MANPAGER='nvim +Man!'
+# I dont remember what this line does
+# export MANROFFOPT="-c"
 #from ThePrimeagen: add a folder to PATH
 addToPath() {
     if [[ "$PATH" != *"$1"* ]]; then
