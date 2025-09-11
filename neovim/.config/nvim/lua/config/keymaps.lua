@@ -45,10 +45,7 @@ vim.keymap.set("n", "<space>c", ":close<cr>", { noremap = true, silent = true })
 keyset("i", "<c-v>", "<esc>pa", { noremap = true })
 
 -- Go to normal mode
-keyset({ "n", "v" }, "e", ":", { noremap = true })
-
---Go to the end of the next word(because I remap the e standard command)
-keyset("n", "se", "e", opts)
+keyset({ "n", "v" }, "r", ":", { noremap = true })
 
 --Search Text
 keyset("n", "f", "/", { noremap = true })

@@ -104,10 +104,8 @@ nnoremap <silent> <space>e :close<cr>
 "paste in insert mode using Ctrl+V
 inoremap<c-v> <esc>pa
 "go to normal mode
-nnoremap e :
-vnoremap e :
-"Go to the end of the next word(because remap)
-nnoremap <silent> se e
+nnoremap r :
+vnoremap r :
 "search text
 nnoremap ss /
 "search text
