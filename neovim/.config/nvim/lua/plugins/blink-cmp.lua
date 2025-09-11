@@ -1,5 +1,5 @@
 --Notr that Blink is also installed in the lsp file as a dependency
-return { -- Autocompletion
+return {
 	"saghen/blink.cmp",
 	event = "VimEnter",
 	version = "*",
