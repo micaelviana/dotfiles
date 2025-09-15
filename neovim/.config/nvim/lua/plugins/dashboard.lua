@@ -33,8 +33,8 @@ return {
 				},
 				{
 					icon = " 󰁯 ",
-					desc = "Recent Files",
-					key = "r",
+					desc = "Old Files",
+					key = "o",
 					action = 'lua require("fzf-lua").oldfiles()',
 					key_format = " %s",
 				},
