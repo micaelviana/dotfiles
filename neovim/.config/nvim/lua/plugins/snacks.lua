@@ -25,7 +25,7 @@ return {
 	keys = {
 		--Other
 		{
-			"<leader>bd",
+			"<leader>1",
 			function()
 				Snacks.bufdelete()
 			end,
