@@ -33,7 +33,7 @@ alias myip="curl http://ipecho.net/plain; echo"
 alias usage='du -h -d1'
 alias rm='trash-put'
 alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lt {} +'
-alias e='exit'
+alias t='exit'
 #ohmyzsh
 alias cpf="copyfile"
 #git
