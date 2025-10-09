@@ -18,8 +18,8 @@ eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #Aliases
+#
 #Common aliases
-alias old="cd /home/micael/dotfiles/dontstow/oldconfig/neovim-with-coc/.config/nvim"
 alias nv="nvim"
 alias nvd="nvim ."
 alias nvf="nvim +GoToFile"
@@ -44,6 +44,9 @@ alias gau="git add -u"
 alias gp="git push origin HEAD"
 alias gpl="git pull"
 alias gs="git status"
+
+#docker 
+alias stopall="docker stop $(docker ps -q)"
 
 #Arch aliases
 alias pacin="sudo pacman -S --needed"
