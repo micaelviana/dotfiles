@@ -115,8 +115,8 @@ source $ZSH/oh-my-zsh.sh
 #lsd aliases
 alias ls='lsd'
 alias l='lsd -l'
-alias la='lsd -a'
-alias lla='lsd -la'
+alias la='lsd -la'
+alias lla='lsd -a'
 alias lt='lsd --tree'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
