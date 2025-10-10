@@ -2,7 +2,7 @@ return {
 	"smjonas/inc-rename.nvim",
 	lazy = false,
 	keys = {
-		{ "<leader>rn", ":IncRename " },
+		{ "<leader>rs", ":IncRename " },
 	},
 	opts = {
 		input_buffer_type = "snacks",
