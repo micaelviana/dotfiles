@@ -51,6 +51,7 @@ return {
 				Snacks.bufdelete.all()
 				vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<CR>", true, false, true), "n", false)
 				vim.cmd("Dashboard")
+				vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("0", true, false, true), "n", false)
 			end,
 			desc = "Delete All Buffers",
 		},
