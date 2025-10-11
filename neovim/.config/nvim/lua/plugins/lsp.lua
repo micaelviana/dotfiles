@@ -222,6 +222,7 @@ return {
 				ts_ls = {
 					filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "typescript.tsx" },
 				},
+				eslint = {},
 				--
 				vimls = {},
 				lua_ls = {
