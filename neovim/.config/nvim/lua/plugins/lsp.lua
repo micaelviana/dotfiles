@@ -197,7 +197,7 @@ return {
 			--  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
 			--  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
 			local capabilities = require("blink.cmp").get_lsp_capabilities()
-
+			local lspconfig = require("lspconfig")
 			-- Enable the following language servers
 			--  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
 			--
@@ -222,7 +222,32 @@ return {
 				ts_ls = {
 					filetypes = { "javascript", "typescript", "javascriptreact", "typescriptreact", "typescript.tsx" },
 				},
-				eslint = {},
+				eslint = {
+					on_attach = function(client, bufnr)
+						vim.api.nvim_create_autocmd("BufWritePre", {
+							buffer = bufnr,
+							command = "EslintFixAll",
+						})
+					end,
+					settings = {
+						experimental = {
+							useFlatConfig = true, -- Enable flat config support
+						},
+						-- Explicitly specify config file if needed
+						options = {
+							configFile = "eslint.config.mjs", -- or path to your config
+						},
+					},
+					-- Ensure it works in the correct directory
+					root_dir = lspconfig.util.root_pattern(
+						"eslint.config.mjs",
+						"eslint.config.js",
+						"eslint.config.cjs",
+						".eslintrc.js",
+						".eslintrc.json",
+						"package.json"
+					),
+				},
 				--
 				vimls = {},
 				lua_ls = {
