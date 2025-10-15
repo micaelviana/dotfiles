@@ -45,7 +45,7 @@ return {
 
 					-- Rename the variable under your cursor.
 					--  Most Language Servers support renaming across files, etc.
-					-- map("<space>rs", vim.lsp.buf.rename, "Rename Symbol")
+					map("<space>rn", vim.lsp.buf.rename, "Rename Symbol")
 
 					-- Execute a code action, usually your cursor needs to be on top of an error
 					-- or a suggestion from your LSP for this to activate.
