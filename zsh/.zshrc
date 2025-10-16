@@ -46,7 +46,8 @@ alias gpl="git pull"
 alias gs="git status"
 
 #docker 
-alias stopall="docker stop $(docker ps -aq)"
+alias stopallcontainers='docker ps -q | xargs docker stop'
+alias pruneallcontainers='docker system prune -a'
 
 #Arch aliases
 alias pacin="sudo pacman -S --needed"
