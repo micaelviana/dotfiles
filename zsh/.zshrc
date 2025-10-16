@@ -46,7 +46,7 @@ alias gpl="git pull"
 alias gs="git status"
 
 #docker 
-alias stopall="docker stop $(docker ps -q)"
+alias stopall="docker stop $(docker ps -aq)"
 
 #Arch aliases
 alias pacin="sudo pacman -S --needed"
