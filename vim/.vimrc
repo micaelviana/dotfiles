@@ -100,7 +100,7 @@ nnoremap <silent> <space>a ggVG
 "make executable
 nnoremap <silent><space>x :!chmod +x %<cr>
 "close Split
-nnoremap <silent> <space>e :close<cr>
+nnoremap <silent> <space>2 :close<cr>
 "paste in insert mode using Ctrl+V
 inoremap<c-v> <esc>pa
 "go to normal mode

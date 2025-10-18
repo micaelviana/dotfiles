@@ -39,7 +39,7 @@ keyset("n", "Q", ":qa!<cr>", { silent = true, noremap = true })
 keyset("n", "<space>x", ":!chmod +x %<cr>", { silent = true, noremap = true })
 
 --Close Split
-vim.keymap.set("n", "<space>c", ":close<cr>", { noremap = true, silent = true })
+vim.keymap.set("n", "<space>2", ":close<cr>", { noremap = true, silent = true })
 
 -- Paste in insert mode using Ctrl+V
 keyset("i", "<c-v>", "<esc>pa", { noremap = true })
