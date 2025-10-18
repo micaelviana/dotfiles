@@ -13,8 +13,6 @@ return {
 		{ "tb", "<cmd>FzfLua buffers<cr>", desc = "Buffers" },
 	},
 	config = function()
-		--Select a file using Fuzzy finder
-		-- vim.api.nvim_create_user_command('GoToFile','lua require("fzf-lua").files()',{})
 		--prevent cursor for blinking
 		vim.opt.guicursor:remove({ "t:block-blinkon500-blinkoff500-TermCursor" })
 	end,
