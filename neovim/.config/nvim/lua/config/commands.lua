@@ -9,4 +9,5 @@ vim.keymap.set(
 	{ noremap = true, silent = true, desc = "Fix Windows weird clipboard behaviour" }
 )
 
+--Select a file using Fuzzy finder
 vim.api.nvim_create_user_command("GoToFile", 'lua require("fzf-lua").files()', {})
