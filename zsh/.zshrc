@@ -47,6 +47,7 @@ alias gs="git status"
 
 #docker 
 alias stopallcontainers='docker ps -q | xargs docker stop'
+#remove unused containers
 alias pruneallcontainers='docker system prune -a'
 
 #Arch aliases
