@@ -22,21 +22,6 @@ require("lazy").setup({
 		notify = false, -- get a notification when new updates are found
 	},
 	spec = {
-		--colorschemes
-		{ "sainnhe/everforest", name = "everforest", lazy = true },
-		{ "EdenEast/nightfox.nvim", lazy = true }, --collection
-		{ "sainnhe/sonokai", lazy = true },
-		{ "folke/tokyonight.nvim", lazy = true },
-
-		--selected one
-		{
-			"bluz71/vim-nightfly-colors",
-			lazy = false,
-			priority = 1000,
-			config = function()
-				vim.cmd.colorscheme("nightfly")
-			end,
-		},
 		{ import = "plugins" },
 	}, --end spec,
 }, {
