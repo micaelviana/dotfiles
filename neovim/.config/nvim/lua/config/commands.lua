@@ -10,4 +10,4 @@ vim.keymap.set(
 )
 
 --Select a file using Fuzzy finder
-vim.api.nvim_create_user_command("GoToFile", 'lua require("fzf-lua").files()', {})
+vim.api.nvim_create_user_command("GoToFile", 'lua require("fzf-lua").files({fd_opts = "--color=never --type f --hidden --follow --no-ignore --exclude .git --exclude node_modules"})', {})
