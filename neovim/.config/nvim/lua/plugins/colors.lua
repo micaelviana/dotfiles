@@ -4,7 +4,6 @@ return {
 	{ "EdenEast/nightfox.nvim", lazy = true }, --collection
 	{ "sainnhe/sonokai", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true },
-	{ "bluz71/vim-nightfly-colors", lazy = true },
 
 	--selected one
 	{
