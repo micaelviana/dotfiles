@@ -9,7 +9,7 @@ return {
 			"<space>f",
 			function()
 				require("fzf-lua").files({
-					fd_opts = "--color=never --type f --hidden --follow --no-ignore --exclude .git --exclude node_modules",
+					fd_opts = "--color=never --type f --hidden --follow --no-ignore --exclude .git --exclude node_modules --exclude .next",
 				})
 			end,
 			desc = "Find Files",
