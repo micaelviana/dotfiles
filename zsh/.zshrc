@@ -44,6 +44,7 @@ alias gau="git add -u"
 alias gp="git push origin HEAD"
 alias gpl="git pull"
 alias gs="git status"
+alias ghopen='open $(git remote get-url origin | sed -E "s#(git@github.com:|https://github.com/)#https://github.com/#; s/\.git$//")'
 
 #docker 
 alias stopallcontainers='docker ps -q | xargs docker stop'
