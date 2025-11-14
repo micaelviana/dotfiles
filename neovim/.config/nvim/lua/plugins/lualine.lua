@@ -5,15 +5,15 @@ return {
 		options = {
 			icons_enabled = true,
 			theme = "auto",
-			component_separators = { left = "", right = "" },
-			section_separators = { left = "", right = "" },
+			component_separators = "",
+			section_separators = "",
 			disabled_filetypes = {
 				statusline = {},
 				winbar = {},
 			},
 			ignore_focus = {},
 			always_divide_middle = true,
-			globalstatus = false,
+			globalstatus = true,
 			refresh = {
 				statusline = 1000,
 				tabline = 1000,
@@ -24,10 +24,7 @@ return {
 			lualine_a = { "mode" },
 			lualine_b = { "branch", "diagnostics" },
 			lualine_c = { { "filename", path = 2 } },
-			-- lualine_x = { "encoding", "fileformat", "filetype" },
 			lualine_x = { "filetype" },
-			-- lualine_y = { "progress" },
-			-- lualine_z = { "location" },
 			lualine_y = {},
 			lualine_z = {},
 		},
@@ -43,5 +40,5 @@ return {
 		winbar = {},
 		inactive_winbar = {},
 		extensions = {},
-	}, --end opts
-} --end lazy table
+	},
+}
