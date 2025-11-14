@@ -6,11 +6,12 @@ return {
 
 	--selected one
 	{
-		"EdenEast/nightfox.nvim",
+		"sainnhe/everforest",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.opt.background = "light"
+			local bg = os.getenv("BACKGROUND") or "dark"
+			vim.opt.background = bg
 			vim.g.everforest_enable_italic = true
 			vim.cmd.colorscheme("everforest")
 		end,
