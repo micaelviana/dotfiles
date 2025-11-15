@@ -50,6 +50,10 @@ alias ghopen='open $(git remote get-url origin | sed -E "s#(git@github.com:|http
 alias stopallcontainers='docker ps -q | xargs docker stop'
 #remove unused containers
 alias pruneallcontainers='docker system prune -a'
+#compose aliases
+alias dcup='docker compose up'
+alias dcdown='docker compose down'
+alias dcstop='docker compose stop'
 
 #Arch aliases
 alias pacin="sudo pacman -S --needed"
