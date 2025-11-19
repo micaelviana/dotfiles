@@ -3,7 +3,7 @@ return {
 	{ "sainnhe/everforest", name = "everforest", lazy = true },
 	{ "sainnhe/sonokai", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true },
-	{ "rose-pine/neovim", name = "rose-pine", lazy = true },
+	{ "rose-pine/neovim", name = "rose-pine", lazy = true }, --superior light theme
 
 	--selected one
 	{
