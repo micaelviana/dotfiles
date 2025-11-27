@@ -12,8 +12,13 @@ return {
 		priority = 1000,
 		config = function()
 			local bg = os.getenv("BACKGROUND") or "dark"
-			vim.opt.background = bg
-			vim.cmd.colorscheme("rose-pine")
+			if bg == "dark" then
+				vim.opt.background = "dark"
+				vim.cmd.colorscheme("everforest")
+			else
+				vim.opt.background = "light"
+				vim.cmd.colorscheme("rose-pine")
+			end
 		end,
 	},
 }
