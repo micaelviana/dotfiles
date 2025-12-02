@@ -1,5 +1,17 @@
 --Notr that Blink is also installed in the lsp file as a dependency
 return {
+	{
+		"micangl/cmp-vimtex",
+		ft = "tex",
+		config = function()
+			require("cmp_vimtex").setup({})
+		end,
+	},
+	{
+		"saghen/blink.compat",
+		version = "*",
+		opts = { impersonate_nvim_cmp = false },
+	},
 	"saghen/blink.cmp",
 	event = "VimEnter",
 	version = "*",
@@ -47,7 +59,7 @@ return {
 		},
 
 		sources = {
-			default = { "lsp", "path", "snippets", "lazydev", "buffer" },
+			default = { "lsp", "path", "snippets", "lazydev", "buffer", "vimtex" },
 			providers = {
 				lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
 				snippets = {
@@ -55,6 +67,11 @@ return {
 						search_paths = { "~/.config/nvim/snippets/" },
 					},
 				},
+			},
+			vimtex = {
+				name = "vimtex",
+				module = "blink.compat.source",
+				score_offset = 3,
 			},
 		},
 
