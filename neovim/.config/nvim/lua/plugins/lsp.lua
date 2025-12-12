@@ -69,7 +69,6 @@ return {
 					--  Useful when your language has ways of declaring types without an actual implementation.
 					map("gi", require("fzf-lua").lsp_implementations, "[G]oto [I]mplementation")
 
-					-- Jump to the definition of the word under your cursor.
 					--  This is where a variable was first declared, or where a function is defined, etc.
 					--  To jump back, press <C-t>.
 					map("gd", require("fzf-lua").lsp_definitions, "[G]oto [D]efinition")
@@ -79,6 +78,13 @@ return {
 						"<space>d",
 						require("fzf-lua").diagnostics_document,
 						"Show diagnostics from the current document"
+					)
+					-- Focus current diagnostic
+					vim.keymap.set(
+						"n",
+						"<leader>cd",
+						vim.diagnostic.open_float,
+						{ desc = "Mostrar diagnostic flutuante" }
 					)
 
 					-- WARN: This is not Goto Definition, this is Goto Declaration.
