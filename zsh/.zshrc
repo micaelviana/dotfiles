@@ -26,6 +26,7 @@ alias nvf="nvim +GoToFile"
 alias tmp='cd /tmp'
 alias c="clear"
 alias py="python"
+alias bat = 'bat --theme ansi'
 alias cdf="zi"
 alias cd="z"
 alias zshr="exec zsh -l"
