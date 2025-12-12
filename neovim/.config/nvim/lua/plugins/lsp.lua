@@ -85,14 +85,6 @@ return {
 					--  For example, in C this would take you to the header.
 					map("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
 
-					-- Navigate diagnostics
-					vim.keymap.set("n", "[d", function()
-						vim.diagnostic.jump({ count = -1, float = true })
-					end)
-					vim.keymap.set("n", "]d", function()
-						vim.diagnostic.jump({ count = 1, float = true })
-					end)
-
 					-- Fuzzy find all the symbols in your current document.
 					--  Symbols are things like variables, functions, types, etc.
 					-- map("gO", require("fzf-lua").lsp_document_symbols, "Open Document Symbols")
