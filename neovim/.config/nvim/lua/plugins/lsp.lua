@@ -83,7 +83,6 @@ return {
 					vim.keymap.set("n", "<leader>cd", function()
 						vim.diagnostic.open_float({
 							scope = "line", -- Mostra só os diagnostics da linha atual (mais limpo)
-							border = "rounded", -- Borda arredondada (bonito!)
 						})
 					end, { desc = "Float diagnostic" })
 
