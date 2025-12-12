@@ -80,12 +80,12 @@ return {
 						"Show diagnostics from the current document"
 					)
 					-- Focus current diagnostic
-					vim.keymap.set(
-						"n",
-						"<leader>cd",
-						vim.diagnostic.open_float,
-						{ desc = "Mostrar diagnostic flutuante" }
-					)
+					vim.keymap.set("n", "<leader>cd", function()
+						vim.diagnostic.open_float({
+							scope = "line", -- Mostra só os diagnostics da linha atual (mais limpo)
+							border = "rounded", -- Borda arredondada (bonito!)
+						})
+					end, { desc = "Float diagnostic" })
 
 					-- WARN: This is not Goto Definition, this is Goto Declaration.
 					--  For example, in C this would take you to the header.
