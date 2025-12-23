@@ -34,8 +34,7 @@ tldr
 trash-cli
 tree
 ttf-hack-nerd
-ttf-ms-win11-auto
-ttf-nerd-fonts-symbols-mono
+ttf-ms-fonts
 unzip
 upscayl-bin
 vagrant
