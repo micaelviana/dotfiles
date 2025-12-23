@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 #create programming folder
-[ ! -d $HOME/Developer ] && mkdir -p $HOME/Developer/{poc,projects,repos} 
+[ ! -d $HOME/Developer ] && mkdir -p $HOME/Developer/{poc,projects,remote} 
 echo "developer folder is ready"
 
 #create folder to download binaries
