@@ -21,6 +21,7 @@ stow
 tldr
 trash-cli
 tree
+tree-sitter-cli
 unzip
 wget
 xdg-utils

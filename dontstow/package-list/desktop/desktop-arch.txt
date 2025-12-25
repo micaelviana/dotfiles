@@ -33,6 +33,7 @@ telegram-desktop
 tldr
 trash-cli
 tree
+tree-sitter-cli
 ttf-hack-nerd
 ttf-ms-fonts
 unzip
