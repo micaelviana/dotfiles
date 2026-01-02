@@ -11,8 +11,8 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local bg = os.getenv("BACKGROUND") or "dark"
-			if bg == "dark" then
+			local bg = os.getenv("BACKGROUND") or "prefer-dark"
+			if bg == "prefer-dark" then
 				vim.opt.background = "dark"
 				vim.cmd.colorscheme("everforest")
 			else
