@@ -3,11 +3,9 @@ base
 base-devel
 bat
 btop
-copyq
 espanso
 fastfetch
 fd
-flameshot
 fzf
 glow
 google-chrome
@@ -34,7 +32,6 @@ tldr
 trash-cli
 tree
 tree-sitter-cli
-ttf-hack-nerd
 ttf-ms-fonts
 unzip
 upscayl-bin
