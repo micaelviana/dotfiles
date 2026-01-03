@@ -11,7 +11,16 @@ return {
 		lazy = false,
 		priority = 1000,
 		config = function()
-			local bg = os.getenv("BACKGROUND") or "prefer-dark"
+			local bg = os.getenv("BACKGROUND")
+			if not bg then
+				local hour = tonumber(os.date("%H"))
+				if hour >= 6 and hour < 18 then
+					bg = "light"
+				else
+					bg = "prefer-dark"
+				end
+			end
+
 			if bg == "prefer-dark" then
 				vim.opt.background = "dark"
 				vim.cmd.colorscheme("everforest")
