@@ -37,3 +37,14 @@ vim.api.nvim_create_autocmd("User", {
 		end
 	end,
 })
+
+-- Reload kitty config on save
+vim.api.nvim_create_autocmd("BufWritePost", {
+	pattern = vim.fn.expand("~/.config/kitty/kitty.conf"),
+	callback = function()
+		local result = vim.fn.system("pgrep kitty")
+		if vim.v.shell_error == 0 then
+			vim.fn.system("kill -SIGUSR1 " .. vim.trim(result))
+		end
+	end,
+})
