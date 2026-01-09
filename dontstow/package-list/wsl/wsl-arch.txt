@@ -4,11 +4,11 @@ base-devel
 btop
 dos2unix
 entr
+eza
 fastfetch
 glow
 inetutils
 links
-lsd
 man-pages
 nano
 neovim

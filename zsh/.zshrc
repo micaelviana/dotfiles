@@ -120,12 +120,12 @@ plugins=(
 #Sources oh-my-zsh config file
 source $ZSH/oh-my-zsh.sh
 
-#lsd aliases
-alias ls='lsd'
-alias l='lsd -l'
-alias la='lsd -la'
-alias lla='lsd -a'
-alias lt='lsd --tree'
+#eza aliases
+alias ls='eza --icons'
+alias l='eza -l --icons'
+alias la='eza -la --icons'
+alias lla='eza -a --icons'
+alias lt='eza --tree --icons'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
