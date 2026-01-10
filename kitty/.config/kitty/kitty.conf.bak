@@ -1,0 +1,70 @@
+font_size 14.0
+disable_ligatures always
+
+# Nerd Fonts Symbols Map
+# Maps standard Nerd Font ranges to the symbols font
+symbol_map U+23FB-U+23FE,U+2B58,U+E200-U+E2A9,U+E0A0-U+E0A3,U+E0B0-U+E0D4,U+E300-U+E3E3,U+F000-U+F2E0,U+F300-U+F372,U+F400-U+F532,U+F0001-U+F1AF0 Symbols Nerd Font
+
+# Keybindings
+# Layouts
+enabled_layouts splits,stack
+
+map alt+r       set_tab_title
+map alt+minus   launch --cwd=current --location=hsplit
+map alt+equal   launch --cwd=current --location=vsplit
+map alt+z       toggle_layout stack
+
+map ctrl+minus  change_font_size all -2.0
+map ctrl+plus   change_font_size all +2.0
+map ctrl+equal  change_font_size all +2.0
+
+map ctrl+wheel_up   change_font_size all +2.0
+map ctrl+wheel_down change_font_size all -2.0
+
+# Mouse
+# Open link with ctrl+click
+mouse_map ctrl+left release grabbed,ungrabbed mouse_handle_click link
+
+# Tab bar
+tab_bar_edge top
+
+# Tab navigation
+map alt+t          new_tab
+map ctrl+tab       next_tab
+map ctrl+shift+tab previous_tab
+
+map ctrl+1 goto_tab 1
+map ctrl+2 goto_tab 2
+map ctrl+3 goto_tab 3
+map ctrl+4 goto_tab 4
+map ctrl+5 goto_tab 5
+map ctrl+6 goto_tab 6
+map ctrl+7 goto_tab 7
+map ctrl+8 goto_tab 8
+map ctrl+9 goto_tab 9
+
+#Allow remote acess
+allow_remote_control yes
+
+# For Linux:
+listen_on unix:@mykitty
+
+# Other unix systems:
+listen_on unix:/tmp/mykitty
+
+# kitty navigator config
+map alt+h kitten pass_keys.py neighboring_window left   alt+h
+map alt+j kitten pass_keys.py neighboring_window bottom alt+j
+map alt+k kitten pass_keys.py neighboring_window top    alt+k
+map alt+l kitten pass_keys.py neighboring_window right  alt+l
+
+# Reload config
+map alt+e load_config_file
+
+
+# BEGIN_KITTY_FONTS
+font_family      family="JetBrains Mono NL"
+bold_font        auto
+italic_font      auto
+bold_italic_font auto
+# END_KITTY_FONTS
