@@ -121,11 +121,11 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 #eza aliases
-alias ls='eza --icons'
-alias l='eza -l --icons'
-alias la='eza -la --icons'
-alias lla='eza -a --icons'
-alias lt='eza --tree --icons'
+alias ls='eza --icons --classify=auto'
+alias l='eza -l --icons --classify=auto'
+alias la='eza -la --icons --classify=auto'
+alias lla='eza -a --icons --classify=auto'
+alias lt='eza --tree --icons --classify=auto'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
