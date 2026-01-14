@@ -37,7 +37,3 @@ pacman -Qet | awk '{print $1 }'
     makepkg -si
 ```
 
-## Downloads
-[Nerd Fonts](https://github.com/ryanoasis/nerd-fonts/releases/)
-
-[Monaco Nerd Font](https://github.com/Karmenzind/monaco-nerd-fonts)
