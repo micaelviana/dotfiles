@@ -16,7 +16,6 @@ man-pages
 microsoft-edge-stable-bin
 neovim
 net-tools
-okular
 pacman-contrib
 qbittorrent
 ripgrep
