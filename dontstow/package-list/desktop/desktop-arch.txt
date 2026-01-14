@@ -11,7 +11,6 @@ fzf
 glow
 google-chrome
 inetutils
-links
 localsend-bin
 man-pages
 microsoft-edge-stable-bin
@@ -36,7 +35,6 @@ ttf-ms-fonts
 unzip
 upscayl-bin
 vagrant
-virtualbox
 visual-studio-code-bin
 vlc
 wget
