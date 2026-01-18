@@ -105,6 +105,11 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+alias gcm='noglob gcm_real'
+gcm_real() {
+  git commit -m "$*"
+}
+
 # Plugins
 plugins=(
     copyfile 
