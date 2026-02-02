@@ -40,11 +40,10 @@ vim.api.nvim_create_autocmd("User", {
 
 -- Reload kitty config on save
 vim.api.nvim_create_autocmd("BufWritePost", {
-	pattern = vim.fn.expand("~/.config/kitty/kitty.conf"),
+	pattern = { "~/.config/kitty/kitty.conf" },
 	callback = function()
-		local result = vim.fn.system("pgrep kitty")
-		if vim.v.shell_error == 0 then
-			vim.fn.system("kill -SIGUSR1 " .. vim.trim(result))
-		end
+		vim.fn.system("kitty @ set-config --from-file ~/.config/kitty/kitty.conf")
+		-- If you have multiple Kitty windows and want to reload all of them, you can add --match=all to the command:
+		--vim.fn.system("kitty @ set-config --from-file ~/.config/kitty/kitty.conf --match=all")
 	end,
 })
