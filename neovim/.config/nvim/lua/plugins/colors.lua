@@ -4,7 +4,8 @@ return {
 	{ "sainnhe/sonokai", lazy = true },
 	{ "folke/tokyonight.nvim", lazy = true },
 	{ "rose-pine/neovim", name = "rose-pine", lazy = true }, --superior light theme
-	{ "sainnhe/gruvbox-material", lazy = false },
+	{ "sainnhe/gruvbox-material", lazy = true },
+	{ "rebelot/kanagawa.nvim", lazy = false },
 
 	--selected one
 	{
@@ -22,7 +23,7 @@ return {
 
 			if bg == "dark" then
 				vim.opt.background = "dark"
-				vim.cmd.colorscheme("gruvbox-material")
+				vim.cmd.colorscheme("kanagawa-dragon")
 			else
 				vim.opt.background = "light"
 				vim.cmd.colorscheme("rose-pine")
