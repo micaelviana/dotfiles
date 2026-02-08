@@ -8,7 +8,7 @@ return {
 	{
 		"saghen/blink.cmp",
 		event = "VimEnter",
-		version = "*",
+		version = "1.*",
 		--- @module 'blink.cmp'
 		--- @type blink.cmp.Config
 		opts = {
@@ -36,7 +36,6 @@ return {
 				-- See :h blink-cmp-config-keymap for defining your own keymap
 				preset = "enter",
 
-				["<C-space>"] = { "show", "show_documentation", "hide_documentation" },
 				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
 			},
@@ -54,7 +53,7 @@ return {
 			},
 
 			sources = {
-				default = { "lsp", "path", "snippets", "lazydev", "buffer"},
+				default = { "lsp", "path", "snippets", "lazydev", "buffer" },
 				providers = {
 					lazydev = { module = "lazydev.integrations.blink", score_offset = 100 },
 					snippets = {
