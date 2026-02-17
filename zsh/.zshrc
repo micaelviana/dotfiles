@@ -49,7 +49,7 @@ alias ghopen='open $(git remote get-url origin | sed -E "s#(git@github.com:|http
 
 #docker 
 alias stopallcontainers='docker ps -q | xargs docker stop'
-#remove unused containers
+#remove unused containers, but keep the volumes
 alias pruneallcontainers='docker system prune -a'
 #compose aliases
 alias dcup='docker compose up'
