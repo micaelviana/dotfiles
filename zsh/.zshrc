@@ -55,6 +55,7 @@ alias pruneallcontainers='docker system prune -a'
 alias dcup='docker compose up'
 alias dcdown='docker compose down'
 alias dcstop='docker compose stop'
+alias lad=lazydocker
 
 #Arch aliases
 alias pacin="sudo pacman -S --needed"
