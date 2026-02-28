@@ -15,3 +15,10 @@ vim.api.nvim_create_user_command(
 	'lua require("fzf-lua").files({fd_opts = "--color=never --type f --hidden --follow --no-ignore --exclude .git --exclude node_modules --exclude .next"})',
 	{}
 )
+
+-- Search for a string using Fuzzy finder (ripgrep)
+vim.api.nvim_create_user_command(
+	"GoToString",
+	'lua require("fzf-lua").live_grep()',
+	{}
+)
