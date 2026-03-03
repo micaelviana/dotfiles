@@ -57,6 +57,7 @@ alias dcup='docker compose up'
 alias dcdown='docker compose down'
 alias dcstop='docker compose stop'
 alias lad=lazydocker
+alias lag=lazygit
 
 #Arch aliases
 alias pacin="sudo pacman -S --needed"
