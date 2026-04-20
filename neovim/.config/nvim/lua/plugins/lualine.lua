@@ -1,6 +1,7 @@
 return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
+	enabled = vim.env.SIMPLER_SCROLLBACK ~= "kitty-scrollback",
 	opts = {
 		options = {
 			icons_enabled = true,
