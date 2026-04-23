@@ -1,23 +1,16 @@
-# Autocd
-setopt autocd
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# More Options
-setopt extended_glob #extendedglob is a zsh shell option that enables enhanced filename/glob pattern matching beyond the standard wildcard syntax (*(zero or more ocurrences), !(anythinhg except the pattern),etc)
-setopt menucomplete
+# Path to your oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
 
-# Completions 
-# insensitive completion
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*' 
-_comp_options+=(globdots) # With hidden files
-autoload -Uz compinit && compinit #enables autocompletion
+# Theme
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
-# History setup
-HISTFILE=~/.zsh_history
-HISTSIZE=100000
-SAVEHIST=100000
-
-setopt HIST_IGNORE_SPACE # Don't save when prefixed with space
-setopt HIST_IGNORE_DUPS  # Don't save duplicate lines
 setopt SHARE_HISTORY      # Share history between sessions
 
 # Evals
@@ -25,6 +18,7 @@ eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #Aliases
+#
 #Common aliases
 alias nv="nvim"
 alias nvd="nvim ."
@@ -89,7 +83,6 @@ alias aptre="sudo nala purge"
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export MANPAGER='nvim +Man!'
-
 #from ThePrimeagen: add a folder to PATH
 addToPath() {
     if [[ "$PATH" != *"$1"* ]]; then
@@ -105,7 +98,7 @@ addToPathFront() {
 addToPath "$HOME/.local/bin"
 addToPath "$HOME/.local/utilities"
 
-# Shell wrapper for Yazi
+# Shell wrapper
 # We suggest using this y shell wrapper that provides the ability to change the current working directory when exiting Yazi.
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
@@ -121,16 +114,19 @@ gcm_real() {
 }
 
 # Plugins
-# plugins=(
-#     copyfile 
-#     copybuffer 
-#     extract
-#     forgit
-#     nvm
-#     fzf 
-#     fast-syntax-highlighting
-#     zsh-autosuggestions 
-# )
+plugins=(
+    copyfile 
+    copybuffer 
+    extract
+    forgit
+    nvm
+    fzf 
+    fast-syntax-highlighting
+    zsh-autosuggestions 
+)
+
+#Sources oh-my-zsh config file
+source $ZSH/oh-my-zsh.sh
 
 #eza aliases
 alias ls='eza --icons --classify=auto'
@@ -138,3 +134,6 @@ alias l='eza -l --icons --classify=auto'
 alias la='eza -la --icons --classify=auto'
 alias lla='eza -a --icons --classify=auto'
 alias lt='eza --tree --icons --classify=auto'
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
