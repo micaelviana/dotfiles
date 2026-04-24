@@ -1,3 +1,6 @@
+# Define zdotdir
+export ZDOTDIR="$HOME"
+
 # Autocd
 setopt autocd
 
@@ -8,8 +11,10 @@ setopt menucomplete
 # Completions 
 # insensitive completion
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=*' 
-_comp_options+=(globdots) # With hidden files
+zstyle ':completion:*' menu select
+zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -Uz compinit && compinit #enables autocompletion
+_comp_options+=(globdots) # With hidden files
 
 # History setup
 HISTFILE=~/.zsh_history
@@ -24,6 +29,26 @@ setopt SHARE_HISTORY      # Share history between sessions
 eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
+#Functions
+function zsh_add_file(){
+  [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
+}
+
+function zsh_add_plugin(){
+  PLUGIN_NAME=$(echo $1 | cut -d '/' -f 2)
+  if [ -d "$ZDOTDIR/.zsh-plugins/$PLUGIN_NAME" ]; then
+    zsh_add_file ".zsh-plugins/$PLUGIN_NAME/$PLUGIN_NAME.plugin.zsh"
+    zsh_add_file ".zsh-plugins/$PLUGIN_NAME/$PLUGIN_NAME.zsh"
+  else
+    git clone "https://github.com/$1.git" "$ZDOTDIR/.zsh-plugins/$PLUGIN_NAME"
+  fi
+}
+
+zsh_add_plugin "zsh-users/zsh-completions"
+zsh_add_plugin "zsh-users/zsh-autosuggestions"
+zsh_add_plugin "wfxr/forgit"
+zsh_add_plugin "zdharma-continuum/fast-syntax-highlighting"
+
 #Aliases
 #Common aliases
 alias nv="nvim"
@@ -36,7 +61,7 @@ alias py="python"
 alias cdf="zi"
 alias bat="bat --theme ansi"
 alias cd="z"
-alias zshr="exec zsh -l"
+alias zshr="source $ZDOTDIR/.zshrc"
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage='du -h -d1'
 alias rm='trash-put'
@@ -125,11 +150,8 @@ gcm_real() {
 #     copyfile 
 #     copybuffer 
 #     extract
-#     forgit
 #     nvm
 #     fzf 
-#     fast-syntax-highlighting
-#     zsh-autosuggestions 
 # )
 
 #eza aliases
