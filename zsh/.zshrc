@@ -165,12 +165,6 @@ gcm_real() {
   git commit -m "$*"
 }
 
-# Plugins
-# plugins=(
-#     copyfile 
-#     copybuffer 
-# )
-
 #eza aliases
 alias ls='eza --icons --classify=auto'
 alias l='eza -l --icons --classify=auto'
