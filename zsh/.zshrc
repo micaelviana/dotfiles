@@ -25,6 +25,11 @@ setopt HIST_IGNORE_SPACE # Don't save when prefixed with space
 setopt HIST_IGNORE_DUPS  # Don't save duplicate lines
 setopt SHARE_HISTORY      # Share history between sessions
 
+# Nvm
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+
 # Evals
 eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -151,8 +156,6 @@ gcm_real() {
 # plugins=(
 #     copyfile 
 #     copybuffer 
-#     extract
-#     nvm
 #     fzf 
 # )
 
