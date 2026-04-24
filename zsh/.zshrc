@@ -30,6 +30,16 @@ eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 #Functions
+# Shell wrapper for Yazi
+# We suggest using this y shell wrapper that provides the ability to change the current working directory when exiting Yazi.
+function y() {
+	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+	yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
+	rm -f -- "$tmp"
+}
+
 function zsh_add_file(){
   [ -f "$ZDOTDIR/$1" ] && source "$ZDOTDIR/$1"
 }
@@ -43,6 +53,7 @@ function zsh_add_plugin(){
     git clone "https://github.com/$1.git" "$ZDOTDIR/.zsh-plugins/$PLUGIN_NAME"
   fi
 }
+
 
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
@@ -130,15 +141,6 @@ addToPathFront() {
 addToPath "$HOME/.local/bin"
 addToPath "$HOME/.local/utilities"
 
-# Shell wrapper for Yazi
-# We suggest using this y shell wrapper that provides the ability to change the current working directory when exiting Yazi.
-function y() {
-	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
-	yazi "$@" --cwd-file="$tmp"
-	IFS= read -r -d '' cwd < "$tmp"
-	[ -n "$cwd" ] && [ "$cwd" != "$PWD" ] && builtin cd -- "$cwd"
-	rm -f -- "$tmp"
-}
 
 alias gcm='noglob gcm_real'
 gcm_real() {
