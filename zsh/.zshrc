@@ -30,6 +30,9 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
 
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
 # Evals
 eval "$(zoxide init zsh)"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
@@ -137,6 +140,7 @@ addToPath() {
         export PATH=$PATH:$1
     fi
 }
+
 addToPathFront() {
     if [[ "$PATH" != *"$1"* ]]; then
         export PATH=$1:$PATH
@@ -145,7 +149,6 @@ addToPathFront() {
 
 addToPath "$HOME/.local/bin"
 addToPath "$HOME/.local/utilities"
-
 
 alias gcm='noglob gcm_real'
 gcm_real() {
@@ -156,7 +159,6 @@ gcm_real() {
 # plugins=(
 #     copyfile 
 #     copybuffer 
-#     fzf 
 # )
 
 #eza aliases
