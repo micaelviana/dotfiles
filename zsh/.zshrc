@@ -73,7 +73,6 @@ function zsh_add_plugin(){
   fi
 }
 
-
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "wfxr/forgit"
