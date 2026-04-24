@@ -28,8 +28,13 @@ setopt SHARE_HISTORY      # Share history between sessions
 # Bindings 
 bindkey '^[[1;5D' backward-word     # Ctrl+Left
 bindkey '^[[1;5C' forward-word      # Ctrl+Right
+
 bindkey '^H' backward-kill-word     # Ctrl+Backspace
 WORDCHARS=${WORDCHARS//\/[&.;]} # Don't consider certain characters (/ & . ;) part of the word
+
+bindkey  "^[[H"   beginning-of-line #Home 
+bindkey  "^[[F"   end-of-line       #End
+bindkey  "^[[3~"  delete-char       #Delete
 
 # Nvm
 export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
