@@ -6,7 +6,9 @@ setopt autocd
 
 # More Options
 setopt extended_glob #extendedglob is a zsh shell option that enables enhanced filename/glob pattern matching beyond the standard wildcard syntax (*(zero or more ocurrences), !(anythinhg except the pattern),etc)
-setopt menucomplete
+setopt menucomplete # enable menu completion with cycling through matches
+# ensure the kbd sequence for Shift+Tab is recognized (common sequences)
+bindkey '\e[Z' reverse-menu-complete
 
 # Completions 
 # insensitive completion
@@ -14,6 +16,8 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=
 zstyle ':completion:*' menu select
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -Uz compinit && compinit #enables autocompletion
+# Complete . and .. special directories
+zstyle ':completion:*' special-dirs true
 _comp_options+=(globdots) # With hidden files
 
 # History setup
