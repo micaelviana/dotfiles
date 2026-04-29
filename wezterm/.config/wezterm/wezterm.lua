@@ -6,7 +6,7 @@ local act = wezterm.action
 
 -- For example, changing the color scheme:
 --config.color_scheme = 'rose-pine-dawn'
-config.color_scheme = "Everforest Dark Medium (Gogh)"
+config.color_scheme = "rose-pine-dawn"
 
 --config.font = wezterm.font('CodeNewRoman Nerd Font Mono')
 config.font = wezterm.font_with_fallback({
@@ -49,11 +49,9 @@ config.keys = {
 			end),
 		}),
 	},
-	{ key = "[", mods = "ALT", action = "ActivateCopyMode" },
+	{ key = "[", mods = "ALT", action = act.ActivateCopyMode },
 	-- paste from the clipboard
 	{ key = "p", mods = "ALT", action = act.PasteFrom("Clipboard") },
-	-- paste from the primary selection
-	{ key = "p", mods = "ALT", action = act.PasteFrom("PrimarySelection") },
 
 	-- copy content
 	{
