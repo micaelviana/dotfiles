@@ -26,6 +26,7 @@
             "branch_behind_icon": "<#88C0D0>↓</>",
             "branch_icon": "",
             "fetch_status": true,
+            "fetch_push_status": true,
             "fetch_upstream_icon": true,
             "github_icon": ""
           },
