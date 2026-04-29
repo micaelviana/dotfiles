@@ -175,3 +175,7 @@ alias l='eza -l --icons --classify=auto'
 alias la='eza -la --icons --classify=auto'
 alias lla='eza -a --icons --classify=auto'
 alias lt='eza --tree --icons --classify=auto'
+
+
+# Load ohmyposh 
+eval "$(oh-my-posh init zsh --config ~/.zsh-themes/probua.minimal-custom.omp.json)"
