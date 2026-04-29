@@ -22,15 +22,15 @@
         {
           "foreground": "#6C6C6C",
           "options": {
-            "branch_ahead_icon": "<#88C0D0>⇡ </>",
-            "branch_behind_icon": "<#88C0D0>⇣ </>",
+            "branch_ahead_icon": "<#88C0D0>↑</>",
+            "branch_behind_icon": "<#88C0D0>↓</>",
             "branch_icon": "",
             "fetch_status": true,
             "fetch_upstream_icon": true,
             "github_icon": ""
           },
           "style": "plain",
-          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }}<#FFAFD7>*</>{{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
+          "template": "{{ .UpstreamIcon }}{{ .HEAD }}{{ if .Working.Changed }}<#FFAFD7>*</>{{ .Working.String }}{{ end }}{{ if .Staging.Changed }}  {{ .Staging.String }}{{ end }}{{ if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if gt .StashCount 0 }}  {{ .StashCount }}{{ end }} ",
           "type": "git"
         }
       ],
