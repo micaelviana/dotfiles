@@ -178,4 +178,4 @@ alias lt='eza --tree --icons --classify=auto'
 
 
 # Load ohmyposh 
-eval "$(oh-my-posh init zsh --config ~/.zsh-themes/pure-custom.json)"
+eval "$(oh-my-posh init zsh --config ~/.zsh-themes/hunk.json)"
