@@ -147,6 +147,7 @@ alias aptre="sudo nala purge"
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export MANPAGER='nvim +Man!'
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 #from ThePrimeagen: add a folder to PATH
 addToPath() {
@@ -176,6 +177,5 @@ alias la='eza -la --icons --classify=auto'
 alias lla='eza -a --icons --classify=auto'
 alias lt='eza --tree --icons --classify=auto'
 
-
-# Load ohmyposh 
-eval "$(oh-my-posh init zsh --config ~/.zsh-themes/hunk.omp.json)"
+#Load Starship
+eval "$(starship init zsh)"
