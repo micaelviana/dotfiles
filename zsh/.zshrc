@@ -81,6 +81,12 @@ zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "wfxr/forgit"
 zsh_add_plugin "zdharma-continuum/fast-syntax-highlighting"
+zsh_add_plugin "kutsan/zsh-system-clipboard"
+
+# Press 'Ctrl-x Ctrl-e' to launch Vim with current line
+autoload edit-command-line
+zle -N edit-command-line
+bindkey '^X^E' edit-command-line
 
 #Aliases
 #Common aliases
