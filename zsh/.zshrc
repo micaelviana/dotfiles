@@ -147,7 +147,6 @@ alias aptre="sudo nala purge"
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export MANPAGER='nvim +Man!'
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 #from ThePrimeagen: add a folder to PATH
 addToPath() {
