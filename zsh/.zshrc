@@ -181,4 +181,5 @@ alias lla='eza -a --icons --classify=auto'
 alias lt='eza --tree --icons --classify=auto'
 
 #Load Starship
+export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 eval "$(starship init zsh)"
