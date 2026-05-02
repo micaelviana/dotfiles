@@ -82,6 +82,12 @@ zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "wfxr/forgit"
 zsh_add_plugin "zdharma-continuum/fast-syntax-highlighting"
 zsh_add_plugin "kutsan/zsh-system-clipboard"
+zsh_add_plugin "zsh-users/zsh-history-substring-search"
+
+# zsh-history-substring-search configuration
+bindkey '^[[A' history-substring-search-up # or '\eOA'
+bindkey '^[[B' history-substring-search-down # or '\eOB'
+HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
 # Press 'Ctrl-x Ctrl-e' to launch Vim with current line
 autoload edit-command-line
