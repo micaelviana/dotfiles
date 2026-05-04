@@ -8,9 +8,7 @@ return {
 		-- or leave it empty to use the default settings
 		-- refer to the configuration section below
 		bigfile = { enabled = true },
-		explorer = {
-			enabled = false,
-		},
+		explorer = { enabled = false },
 		quickfile = { enabled = true },
 		dashboard = { enabled = false },
 		indent = { enabled = false },
@@ -51,6 +49,13 @@ return {
 				Snacks.bufdelete.all()
 			end,
 			desc = "Delete All Buffers",
+		},
+		{
+			"<leader>l",
+			function()
+				Snacks.lazygit()
+			end,
+			desc = "Open Lazygit",
 		},
 	},
 }
