@@ -100,6 +100,7 @@ alias nv="nvim"
 alias nvd="nvim ."
 alias nvf="nvim +GoToFile"
 alias nvg="nvim +GoToString"
+alias oil="nvim ."
 alias tmp='cd /tmp'
 alias c="clear"
 alias py="python"
