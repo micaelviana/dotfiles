@@ -157,6 +157,7 @@ alias aptre="sudo nala purge"
 #Exports
 export EDITOR=nvim
 export SUDO_EDITOR=nvim
+export HOMEBREW_NO_AUTO_UPDATE=1
 export MANPAGER='nvim +Man!'
 
 #from ThePrimeagen: add a folder to PATH
