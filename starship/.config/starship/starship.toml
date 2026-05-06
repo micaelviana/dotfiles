@@ -39,7 +39,7 @@ stashed = "≡"
 # if you got problems with the ahead_behind, it's probably because your branch is not being tracked, use this command: 
 # git branch --set-upstream-to=origin/YOUR_BRANCH
 ahead = '⇡${count}'
-diverged = ''
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 behind = '⇣${count}'
 
 [git_state]
