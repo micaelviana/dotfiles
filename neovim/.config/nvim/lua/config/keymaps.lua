@@ -74,3 +74,69 @@ vim.keymap.set("n", "<space>z", function()
 	vim.cmd("lcd %:p:h")
 	vim.cmd("pwd")
 end, { noremap = true })
+
+-- Keymap to create a GitHub repository
+-- It uses the github CLI, which in macOS is installed with:
+-- brew install gh
+vim.keymap.set("n", "<leader>gc", function()
+	-- Check if GitHub CLI is installed
+	local gh_installed = vim.fn.system("command -v gh")
+	if gh_installed == "" then
+		print("GitHub CLI is not installed. Please install it using 'brew install gh'.")
+		return
+	end
+	-- Get the current working directory and extract the repository name
+	local cwd = vim.fn.getcwd()
+	local repo_name = vim.fn.fnamemodify(cwd, ":t")
+	if repo_name == "" then
+		print("Failed to extract repository name from the current directory.")
+		return
+	end
+	-- Display the message and ask for confirmation
+	vim.ui.select({ "yes", "no" }, {
+		prompt = 'The name of the repo will be: "' .. repo_name .. '". Continue?',
+		default = "no",
+	}, function(choice)
+		if choice ~= "yes" then
+			print("Operation canceled.")
+			return
+		end
+		-- Check if the repository already exists on GitHub
+		local check_repo_command =
+			string.format("gh repo view %s/%s", vim.fn.system("gh api user --jq '.login'"):gsub("%s+", ""), repo_name)
+		local check_repo_result = vim.fn.systemlist(check_repo_command)
+		if not string.find(table.concat(check_repo_result), "Could not resolve to a Repository") then
+			print("Repository '" .. repo_name .. "' already exists on GitHub.")
+			return
+		end
+		-- Prompt for repository type
+		vim.ui.select({ "private", "public" }, {
+			prompt = "Select the repository type:",
+			default = "private",
+		}, function(repo_type)
+			if not repo_type then
+				print("Operation canceled.")
+				return
+			end
+			-- Set the repository type flag
+			local repo_type_flag = repo_type == "private" and "--private" or "--public"
+			-- Initialize the git repository and create the GitHub repository
+			local init_command = string.format("cd %s && git init", vim.fn.shellescape(cwd))
+			vim.fn.system(init_command)
+			local create_command = string.format(
+				"cd %s && gh repo create %s %s --source=.",
+				vim.fn.shellescape(cwd),
+				repo_name,
+				repo_type_flag
+			)
+			local create_result = vim.fn.system(create_command)
+			-- Print the result of the repository creation command and set the main branch
+			if string.find(create_result, "https://github.com") then
+				print("Repository '" .. repo_name .. "' created successfully.")
+				vim.fn.system("git branch -M main")
+			else
+				print("Failed to create the repository: " .. create_result)
+			end
+		end)
+	end)
+end, { desc = "[P]Create GitHub repository" })
