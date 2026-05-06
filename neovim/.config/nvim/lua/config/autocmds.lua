@@ -29,6 +29,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- LSP-integrated file renaming for Oil
+-- Yazi doesn't need a specific autocmd to configure the rename integration because it's already bult-in
 vim.api.nvim_create_autocmd("User", {
 	pattern = "OilActionsPost",
 	callback = function(event)
