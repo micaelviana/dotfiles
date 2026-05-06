@@ -75,7 +75,7 @@ vim.keymap.set("n", "<space>z", function()
 	vim.cmd("pwd")
 end, { noremap = true })
 
--- Keymap to create a GitHub repository
+-- Keymap to create a GitHub repository, from Linkarzu
 -- It uses the github CLI, which in macOS is installed with:
 -- brew install gh
 vim.keymap.set("n", "<leader>gc", function()
