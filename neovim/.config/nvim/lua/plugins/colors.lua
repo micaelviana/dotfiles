@@ -23,7 +23,7 @@ return {
 
 			if bg == "dark" then
 				vim.opt.background = "dark"
-				vim.cmd.colorscheme("kanagawa-dragon")
+				vim.cmd.colorscheme("kanagawa")
 			else
 				vim.opt.background = "light"
 				vim.cmd.colorscheme("rose-pine")
