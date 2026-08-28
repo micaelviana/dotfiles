@@ -114,7 +114,9 @@ alias tmp='cd /tmp'
 alias c="clear"
 alias py="python"
 alias bat="bat --theme ansi"
-alias cd="z"
+if (( $+functions[z] )); then
+    alias cd="z"
+fi
 alias zshr="source $ZDOTDIR/.zshrc"
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage='du -h -d1'
