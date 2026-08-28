@@ -111,7 +111,6 @@ alias oil="nvim ."
 alias tmp='cd /tmp'
 alias c="clear"
 alias py="python"
-alias cdf="zi"
 alias bat="bat --theme ansi"
 alias cd="z"
 alias zshr="source $ZDOTDIR/.zshrc"
