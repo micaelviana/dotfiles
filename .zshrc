@@ -23,7 +23,9 @@ zinit depth"1" light-mode for \
   zsh-users/zsh-autosuggestions \
   zdharma-continuum/fast-syntax-highlighting \
   zsh-users/zsh-history-substring-search \
-  wfxr/forgit
+  wfxr/forgit \
+  OMZL::clipboard.zsh \
+  OMZP::copyfile
 ### End of Zinit's installer chunk
 
 
@@ -119,6 +121,7 @@ alias usage='du -h -d1'
 alias rm='trash-put'
 alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lt {} +'
 alias t='exit'
+alias cpf='copyfile'
 #git
 alias g="git"
 alias gc="git clone --recurse-submodules"
