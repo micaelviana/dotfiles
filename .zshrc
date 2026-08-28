@@ -24,8 +24,12 @@ zinit depth"1" light-mode for \
   zdharma-continuum/fast-syntax-highlighting \
   zsh-users/zsh-history-substring-search \
   wfxr/forgit
-
 ### End of Zinit's installer chunk
+
+
+# Evals
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(zoxide init zsh)"
 
 # Autocd
 setopt autocd
@@ -74,9 +78,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 # Set up fzf key bindings and fuzzy completion
 FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= source <(fzf --zsh)
 
-# Evals
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-eval "$(zoxide init zsh)"
 
 #Functions
 # Shell wrapper for Yazi
