@@ -10,10 +10,10 @@ autocmd VimEnter * if len(filter(values(g:plugs), '!isdirectory(v:val.dir)'))
 \| endif
 "List of plugins
 call plug#begin('~/.vim/plugged')
-"    Plug 'neoclide/coc.nvim', {'branch': 'release'} "autocomplete + LSP 
     "Themes
     Plug 'arcticicestudio/nord-vim' 
     Plug 'crusoexia/vim-monokai'
+    Plug 'morhetz/gruvbox'
     Plug 'itchyny/lightline.vim' "statusline
     "Autocomplete
     Plug 'lifepillar/vim-mucomplete'
@@ -143,10 +143,10 @@ vnoremap <silent> > >gv
 "{{From plugins}}
 "lightline just works in VIM if you put this
 set laststatus=2
-let g:lightline={'colorscheme':'nord'}
+let g:lightline={'colorscheme':'gruvbox'}
 "fzf
 nnoremap <c-p> :Files <cr>
-nnoremap tf :Files <cr>
+nnoremap <space>ff :Files <cr>
 "vim-mucomplete
 set completeopt+=menuone
 set completeopt+=noselect
@@ -156,4 +156,5 @@ let g:mucomplete#enable_auto_at_startup = 1
 
 " Select the complete menu item like CTRL+y would.
 inoremap <expr> <CR> pumvisible() ? "<C-y>" :"<CR>"
-colorscheme nord
+set background=dark
+colorscheme gruvbox
