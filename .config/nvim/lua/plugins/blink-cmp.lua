@@ -35,6 +35,16 @@ return {
 				--
 				-- See :h blink-cmp-config-keymap for defining your own keymap
 				preset = "enter",
+				["<C-CR>"] = {
+					function(cmp)
+						if cmp.is_menu_visible() then
+							cmp.cancel()
+						end
+						local cr = vim.api.nvim_replace_termcodes("<CR>", true, true, true)
+						vim.api.nvim_feedkeys(cr, "n", false)
+						return true
+					end,
+				},
 
 				-- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
 				--    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
