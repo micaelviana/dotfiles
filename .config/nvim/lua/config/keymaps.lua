@@ -45,7 +45,7 @@ vim.keymap.set("n", "<space>2", ":close<cr>", { noremap = true, silent = true })
 keyset("i", "<c-v>", "<esc>pa", { noremap = true })
 
 -- Go to normal mode
-keyset({ "n", "v" }, "r", ":", { noremap = true })
+keyset({ "n", "v" }, "t", ":", { noremap = true })
 
 --Search Text
 keyset("n", "ss", "/", { noremap = true })

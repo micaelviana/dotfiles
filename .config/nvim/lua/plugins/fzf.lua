@@ -6,7 +6,7 @@ return {
 	keys = {
 		{ "<space>B", "<cmd>FzfLua builtin<cr>", desc = "List all fzf commands" },
 		{
-			"<space>f",
+			"<space>ff",
 			function()
 				require("fzf-lua").files({
 					fd_opts = "--color=never --type f --hidden --follow --no-ignore --exclude .git --exclude node_modules --exclude .next",
@@ -14,11 +14,11 @@ return {
 			end,
 			desc = "Find Files",
 		},
-		{ "tg", "<cmd>FzfLua live_grep<cr>", desc = "Grep" },
-		{ "to", "<cmd>FzfLua oldfiles<cr>", desc = "Old files" },
-		{ "th", "<cmd>FzfLua helptags<cr>", desc = "Help pages" },
-		{ "tk", "<cmd>FzfLua keymaps<cr>", desc = "Keymaps" },
-		{ "tb", "<cmd>FzfLua buffers<cr>", desc = "Buffers" },
+		{ "<space>fg", "<cmd>FzfLua live_grep<cr>", desc = "Grep" },
+		{ "<space>fo", "<cmd>FzfLua oldfiles<cr>", desc = "Old files" },
+		{ "<space>fh", "<cmd>FzfLua helptags<cr>", desc = "Help pages" },
+		{ "<space>fk", "<cmd>FzfLua keymaps<cr>", desc = "Keymaps" },
+		{ "<space>fb", "<cmd>FzfLua buffers<cr>", desc = "Buffers" },
 	},
 	config = function()
 		--prevent cursor for blinking

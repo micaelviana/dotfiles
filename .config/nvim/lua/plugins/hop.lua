@@ -1,10 +1,10 @@
 return {
-    'smoka7/hop.nvim',
-    version = "*",
-    opts = {
-        keys = 'etovxqpdygfblzhckisuran'
-    },
-    keys={
-        {'tt','<cmd>HopWord<cr>'}
-    },
+	"smoka7/hop.nvim",
+	version = "*",
+	opts = {
+		keys = "etovxqpdygfblzhckisuran",
+	},
+	keys = {
+		{ "<space>jj", "<cmd>HopWord<cr>" },
+	},
 }
