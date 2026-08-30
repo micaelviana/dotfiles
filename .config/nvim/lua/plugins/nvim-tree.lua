@@ -11,6 +11,9 @@ return {
 	config = function()
 		-- OR setup with some options
 		require("nvim-tree").setup({
+			hijack_directories = {
+				enable = false,
+			},
 			sort = {
 				sorter = "case_sensitive",
 			},
