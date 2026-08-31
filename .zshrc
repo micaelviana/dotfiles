@@ -56,8 +56,7 @@ zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|=*' 'l:|=* r:|=
 zstyle ':completion:*' menu select
 zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 autoload -Uz compinit && compinit #enables autocompletion
-# Complete . and .. special directories
-zstyle ':completion:*' special-dirs true
+zstyle ':completion:*' special-dirs false
 _comp_options+=(globdots) # With hidden files
 
 # History setup
