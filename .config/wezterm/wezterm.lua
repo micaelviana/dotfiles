@@ -128,6 +128,23 @@ config.keys = {
 	},
 }
 
+-- Navigate tabs with Ctrl+{1-9} and Alt+{1-9}
+-- Skip Ctrl+6 because it's used by Vim (alternate file)
+for i = 1, 9 do
+	table.insert(config.keys, {
+		key = tostring(i),
+		mods = "ALT",
+		action = act.ActivateTab(i - 1),
+	})
+	if i ~= 6 then
+		table.insert(config.keys, {
+			key = tostring(i),
+			mods = "CTRL",
+			action = act.ActivateTab(i - 1),
+		})
+	end
+end
+
 config.mouse_bindings = {
 	-- Ctrl-click will open the link under the mouse cursor
 	{
