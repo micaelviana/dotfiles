@@ -22,11 +22,8 @@ end
 
 config.color_scheme = scheme_for_appearance(get_appearance())
 
---config.font = wezterm.font('CodeNewRoman Nerd Font Mono')
-config.font = wezterm.font_with_fallback({
-	"Monaco",
-	{ family = "Symbols Nerd Font Mono", scale = 0.75 },
-})
+config.font = wezterm.font("Monaco")
+
 config.font_size = 15
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } --disable ligatures
 
