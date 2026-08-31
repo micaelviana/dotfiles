@@ -50,7 +50,7 @@ config.keys = {
 	--popup to rename the current tab
 	{
 		key = "R",
-		mods = "CTRL|SHIFT",
+		mods = "ALT",
 		action = wezterm.action.PromptInputLine({
 			description = "Enter new tab name",
 			action = wezterm.action_callback(function(window, pane, line)
