@@ -4,20 +4,34 @@ local wezterm = require("wezterm")
 local config = wezterm.config_builder()
 local act = wezterm.action
 
--- For example, changing the color scheme:
---config.color_scheme = 'rose-pine-dawn'
-config.color_scheme = "rose-pine-dawn"
+-- have your color scheme automatically adjust to the current appearance:
+function get_appearance()
+	if wezterm.gui then
+		return wezterm.gui.get_appearance()
+	end
+	return "Dark"
+end
+
+function scheme_for_appearance(appearance)
+	if appearance:find("Dark") then
+		return "Kanagawa (Gogh)"
+	else
+		return "Rosé Pine Dawn (base16)"
+	end
+end
+
+config.color_scheme = scheme_for_appearance(get_appearance())
 
 --config.font = wezterm.font('CodeNewRoman Nerd Font Mono')
 config.font = wezterm.font_with_fallback({
 	"Monaco",
 	{ family = "Symbols Nerd Font Mono", scale = 0.75 },
 })
-config.font_size = 12.3
+config.font_size = 15
 config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" } --disable ligatures
 
+config.use_fancy_tab_bar = false
 config.enable_kitty_graphics = true
-config.enable_wayland = false
 
 --enhance animations and speed
 config.max_fps = 120
