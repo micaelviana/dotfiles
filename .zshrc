@@ -40,6 +40,7 @@ zinit depth"1" light-mode for \
 # Evals
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 eval "$(zoxide init zsh)"
+eval "$(atuin init zsh)"
 
 # Autocd
 setopt autocd
