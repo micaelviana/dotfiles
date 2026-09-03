@@ -3,6 +3,7 @@ base
 base-devel
 google-chrome
 inetutils
+kitty
 man-pages
 microsoft-edge-stable-bin
 net-tools
@@ -14,6 +15,7 @@ unzip
 visual-studio-code-bin
 vlc
 vlc-plugins-all
+wezterm
 wget
 xdg-utils
 zip
