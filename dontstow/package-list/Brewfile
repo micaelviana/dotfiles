@@ -1,0 +1,31 @@
+# Cross-platform software keyboard remapper for Linux, macOS and Windows
+brew "kanata"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# AI coding agent, built for the terminal
+brew "opencode"
+# Cross-shell prompt for astronauts
+brew "starship"
+# Organize software neatly under a single directory tree (e.g. /usr/local)
+brew "stow"
+# Terminal multiplexer
+brew "tmux"
+# Command-line interface to the freedesktop.org trashcan
+brew "trash-cli"
+# Blazing fast terminal file manager written in Rust, based on async I/O
+brew "yazi"
+# Shell extension to navigate your filesystem faster
+brew "zoxide"
+brew "sesh"
+brew "shellcheck"
+brew "stow"
+# Terminal interface for Antigravity agents
+cask "antigravity-cli"
+cask "font-cascadia-mono"
+cask "font-hack-nerd-font"
+cask "font-iosevka-nerd-font"
+cask "font-symbols-only-nerd-font"
