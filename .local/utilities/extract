@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
 # From oh-my-zsh plugins
+alias x='extract'
 extract() {
   setopt localoptions noautopushd
 
