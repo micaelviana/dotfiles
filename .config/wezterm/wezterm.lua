@@ -126,6 +126,9 @@ config.keys = {
 			window:set_config_overrides(overrides)
 		end),
 	},
+	-- Move the current tab relative to its peers
+	{ key = "<", mods = "SHIFT|ALT", action = act.MoveTabRelative(-1) },
+	{ key = ">", mods = "SHIFT|ALT", action = act.MoveTabRelative(1) },
 }
 
 -- Navigate tabs with Ctrl+{1-9} and Alt+{1-9}
