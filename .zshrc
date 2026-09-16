@@ -180,7 +180,6 @@ export EDITOR=nvim
 export SUDO_EDITOR=nvim
 export HOMEBREW_NO_AUTO_UPDATE=1
 export MANPAGER='nvim +Man!'
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 #from ThePrimeagen: add a folder to PATH
 addToPath() {
