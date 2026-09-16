@@ -153,25 +153,27 @@ alias dcstop='docker compose stop'
 alias lad=lazydocker
 alias lag=lazygit
 
-#Arch aliases
-alias pacin="sudo pacman -S --needed"
-alias pacud="sudo pacman -Syu"
-alias pacse="pacman -Ss"
-alias pacre="sudo pacman -Rns"
-alias pacun="sudo rm /var/lib/pacman/db.lck"
-alias paccl='sudo pacman -Rs -- $(pacman -Qtdq)'
-alias aurup='yay -Sua'
-alias aurin='yay -S'
-alias aurse='yay -Ss'
-alias aurre='yay -Rns'
-alias aurli="pacman -Qm"
 
-#Ubuntu aliases
-alias aptin="sudo nala install -y"
-alias aptud="sudo nala update"
-alias aptug="sudo nala upgrade -y"
-alias aptse="nala search"
-alias aptre="sudo nala purge"
+# Detect available package manager
+if command -v apt &> /dev/null; then
+  alias pacin="sudo apt install -y"
+  alias pacud="sudo apt update"
+  alias pacug="sudo apt upgrade -y"
+  alias pacse="apt search"
+  alias pacre="sudo apt purge"
+elif command -v yay &> /dev/null; then
+  alias pacin="sudo pacman -S --needed"
+  alias pacud="sudo pacman -Syu"
+  alias pacse="pacman -Ss"
+  alias pacre="sudo pacman -Rns"
+  alias pacun="sudo rm /var/lib/pacman/db.lck"
+  alias paccl='sudo pacman -Rs -- $(pacman -Qtdq)'
+  alias aurup='yay -Sua'
+  alias aurin='yay -S'
+  alias aurse='yay -Ss'
+  alias aurre='yay -Rns'
+  alias aurli="pacman -Qm"
+fi
 
 #Exports
 export EDITOR=nvim
