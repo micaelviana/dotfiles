@@ -1,22 +1,23 @@
-#!/bin/bash
-
-if [ -f /etc/os-release ]; then
-    . /etc/os-release
-    OS=$NAME
+#!/usr/bin/env bash
+# Detectar gerenciador de pacotes disponível
+if command -v apt &> /dev/null; then
+    PACKAGE_MANAGER="apt"
+elif command -v yay &> /dev/null; then
+    PACKAGE_MANAGER="yay"
 else
-    OS=$(uname -s)
+    echo "Gerenciador de pacotes não suportado. O script suporta apenas apt e yay."
+    exit 1
 fi
 
-case $OS in
-    "Ubuntu")
+echo "Gerenciador de pacotes detectado: $PACKAGE_MANAGER"
+
+# Instalar dependências com base no gerenciador de pacotes
+if [[ "$PACKAGE_MANAGER" == "apt" ]]; then
+    echo "Instalando pacotes para o desktop com apt..."
         while read -r package; do
-            sudo nala install -y $package || echo "Package $package not found."
+            sudo apt install -y $package || echo "Package $package not found."
         done < desktop-ubuntu.txt
-        ;;
-    "Arch Linux")
+elif [[ "$PACKAGE_MANAGER" == "yay" ]]; then
+    echo "Instalando pacotes para o desktop com yay..."
         yay -S --noconfirm --needed - < desktop-arch.txt        
-        ;;
-    *)
-        echo "Error"
-        ;;
-esac
+fi
