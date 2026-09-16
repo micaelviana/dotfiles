@@ -5,7 +5,7 @@ if command -v yay &> /dev/null; then
     exit 0
 fi
 
-cd tmp || exit 1
+cd /tmp || exit 1
 sudo pacman -S --needed git base-devel
 git clone https://aur.archlinux.org/yay-bin.git
 cd yay-bin || exit 1
