@@ -10,6 +10,7 @@ net-tools
 pacman-contrib
 qbittorrent
 sshfs
+stow
 telegram-desktop
 unzip
 visual-studio-code-bin
