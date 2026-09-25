@@ -5,6 +5,6 @@ return {
 		keys = "etovxqpdygfblzhckisuran",
 	},
 	keys = {
-		{ "<space>jj", "<cmd>HopWord<cr>" },
+		{ "sj", "<cmd>HopWord<cr>" },
 	},
 }
