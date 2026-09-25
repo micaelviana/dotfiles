@@ -1,4 +1,5 @@
 curl
+fish
 inetutils
 man-db
 man-pages
@@ -12,4 +13,5 @@ wget
 wl-clipboard
 xdg-utils
 zip
+zsh
 zsh

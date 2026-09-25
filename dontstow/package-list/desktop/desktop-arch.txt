@@ -1,6 +1,7 @@
 arch-install-scripts
 base
 base-devel
+fish
 google-chrome
 inetutils
 kitty
@@ -20,3 +21,4 @@ wezterm
 wget
 xdg-utils
 zip
+zsh

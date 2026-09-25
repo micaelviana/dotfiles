@@ -1,4 +1,6 @@
 curl
+fish
+wezterm
 git
 kitty
 qbittorrent
@@ -9,3 +11,4 @@ unzip
 vlc
 wget
 zip
+zsh

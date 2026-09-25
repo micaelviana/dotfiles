@@ -2,6 +2,7 @@ arch-install-scripts
 base
 base-devel
 dos2unix
+fish
 inetutils
 man-pages
 nano
@@ -14,3 +15,4 @@ wget
 xdg-utils
 yay-bin-debug
 zip
+zsh
