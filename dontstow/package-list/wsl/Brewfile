@@ -30,5 +30,6 @@ brew "trash-cli"
 brew "yazi"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
+brew "tree-sitter-cli"
 # Terminal interface for Antigravity agents
 cask "antigravity-cli"
