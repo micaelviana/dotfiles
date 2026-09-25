@@ -21,8 +21,13 @@ keyset("n", "\\q", ":xa<cr>", opts)
 keyset("n", "\\z", ":xa<cr>", opts)
 
 -- Splits
-keyset("n", "sh", ":split<cr>", opts)
-keyset("n", "sv", ":vsplit<cr>", opts)
+keyset("n", "sh", function()
+	vim.fn.system("wezterm cli split-pane --bottom")
+end, { desc = "Split WezTerm bottom" })
+
+keyset("n", "sv", function()
+	vim.fn.system("wezterm cli split-pane --right")
+end, { desc = "Split WezTerm right" })
 
 --Move line up and down
 vim.keymap.set("v", "K", ":m '<-2<CR>gv=gv", { noremap = true, silent = true, desc = "Move Line Up in Visual Mode" })
