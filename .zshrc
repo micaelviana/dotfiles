@@ -162,12 +162,14 @@ if command -v apt &> /dev/null; then
   alias pacse="apt search"
   alias pacre="sudo apt purge"
   alias pacfo="apt show"
+  alias pacch="apt -qq list"
 elif command -v yay &> /dev/null; then
   alias pacin="sudo pacman -S --needed"
   alias pacud="sudo pacman -Syu"
   alias pacse="pacman -Ss"
   alias pacre="sudo pacman -Rns"
   alias pacfo="pacman -Si"
+  alias pacch="pacman -Qi"
   alias pacun="sudo rm /var/lib/pacman/db.lck"
   alias paccl='sudo pacman -Rs -- $(pacman -Qtdq)'
   alias aurup='yay -Sua'
