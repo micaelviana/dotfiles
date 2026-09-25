@@ -161,11 +161,13 @@ if command -v apt &> /dev/null; then
   alias pacug="sudo apt upgrade -y"
   alias pacse="apt search"
   alias pacre="sudo apt purge"
+  alias pacfo="apt show"
 elif command -v yay &> /dev/null; then
   alias pacin="sudo pacman -S --needed"
   alias pacud="sudo pacman -Syu"
   alias pacse="pacman -Ss"
   alias pacre="sudo pacman -Rns"
+  alias pacfo="pacman -Si"
   alias pacun="sudo rm /var/lib/pacman/db.lck"
   alias paccl='sudo pacman -Rs -- $(pacman -Qtdq)'
   alias aurup='yay -Sua'
