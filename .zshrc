@@ -34,6 +34,7 @@ zinit depth"1" light-mode for \
   OMZL::clipboard.zsh \
   OMZP::copyfile \
   romkatv/powerlevel10k
+
 ### End of Zinit's installer chunk
 
 
@@ -102,8 +103,8 @@ function y() {
 
 
 # zsh-history-substring-search configuration
-bindkey '^[[A' history-substring-search-up # or '\eOA'
-bindkey '^[[B' history-substring-search-down # or '\eOB'
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
 HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 
 # Press 'Ctrl-x Ctrl-e' to launch Vim with current line
