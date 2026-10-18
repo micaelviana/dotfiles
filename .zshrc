@@ -216,3 +216,10 @@ alias lt='eza --tree --icons --classify=auto'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+__wezterm_set_cwd() {
+  if [[ -n "${WEZTERM_PANE-}" ]]; then
+    printf '\033]7;file://%s%s\033\\' "${HOSTNAME:-localhost}" "$PWD"
+  fi
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd __wezterm_set_cwd
