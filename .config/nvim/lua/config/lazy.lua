@@ -44,4 +44,8 @@ require("lazy").setup({
 			lazy = "💤 ",
 		},
 	},
+	rocks = {
+		enabled = true,
+		hererocks = true, -- Automatically installs Lua and LuaRocks in an isolated environment
+	},
 })
