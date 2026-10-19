@@ -5,9 +5,9 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-### Added by Zinit's installer
+### Added by Zinit's installe
 if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})ÔÇª%f"
     command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
     command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
         print -P "%F{33} %F{34}Installation successful.%f%b" || \
@@ -32,7 +32,10 @@ zinit depth"1" light-mode for \
   zsh-users/zsh-history-substring-search \
   wfxr/forgit \
   OMZL::clipboard.zsh \
+  OMZL::functions.zsh \
+  OMZL::termsupport.zsh \
   OMZP::copyfile \
+  OMZP::nvm \
   romkatv/powerlevel10k
 
 ### End of Zinit's installer chunk
@@ -82,12 +85,9 @@ bindkey  "^[[F"   end-of-line       #End
 bindkey  "^[[3~"  delete-char       #Delete
 
 # Nvm
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-    \. "$NVM_DIR/nvm.sh"
-    nvm use node --silent
-fi
-[[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
+# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+# [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
 
 # Set up fzf key bindings and fuzzy completion
 FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= source <(fzf --zsh)
@@ -129,7 +129,7 @@ alias bat="bat --theme ansi"
 if (( $+functions[z] )); then
     alias cd="z"
 fi
-alias zshr="source ~/.zshrc"
+alias zshr="exec zsh"
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage='du -h -d1'
 alias rm='trash-put'
@@ -154,11 +154,11 @@ alias pruneallcontainers='docker system prune -a'
 alias dcup='docker compose up'
 alias dcdown='docker compose down'
 alias dcstop='docker compose stop'
-alias lad=lazydocker
+alias lad=lazydocke
 alias lag=lazygit
 
 
-# Detect available package manager
+# Detect available package manage
 if command -v apt &> /dev/null; then
   alias pacin="sudo apt install -y"
   alias pacud="sudo apt update"
@@ -217,12 +217,8 @@ alias la='eza -la --icons --classify=auto'
 alias lla='eza -a --icons --classify=auto'
 alias lt='eza --tree --icons --classify=auto'
 
+#Only on WSL, without this, the Wezterm cannot open the split in the current domain
+[ -f ~/wezterm.sh ] && source ~/wezterm.sh
+
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-__wezterm_set_cwd() {
-  if [[ -n "${WEZTERM_PANE-}" ]]; then
-    printf '\033]7;file://%s%s\033\\' "${HOSTNAME:-localhost}" "$PWD"
-  fi
-}
-autoload -Uz add-zsh-hook
-add-zsh-hook precmd __wezterm_set_cwd
