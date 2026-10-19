@@ -132,7 +132,7 @@ fi
 alias zshr="exec zsh"
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage='du -h -d1'
-alias rm='trash-put'
+[ command -v trash-put &> /dev/null ] && alias rm='trash-put'
 alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lt {} +'
 alias t='exit'
 alias cpf='copyfile'
@@ -211,11 +211,13 @@ gcm_real() {
 }
 
 #eza aliases
-alias ls='eza --icons --classify=auto'
-alias l='eza -l --icons --classify=auto'
-alias la='eza -la --icons --classify=auto'
-alias lla='eza -a --icons --classify=auto'
-alias lt='eza --tree --icons --classify=auto'
+if command -v eza &> /dev/null; then
+  alias ls='eza --icons --classify=auto'
+  alias l='eza -l --icons --classify=auto'
+  alias la='eza -la --icons --classify=auto'
+  alias lla='eza -a --icons --classify=auto'
+  alias lt='eza --tree --icons --classify=auto'
+fi
 
 #Only on WSL, without this, the Wezterm cannot open the split in the current domain
 [ -f ~/wezterm.sh ] && source ~/wezterm.sh
