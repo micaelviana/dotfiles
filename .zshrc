@@ -143,7 +143,7 @@ fi
 alias zshr="exec zsh"
 alias myip="curl http://ipecho.net/plain; echo"
 alias usage='du -h -d1'
-[ command -v trash-put &> /dev/null ] && alias rm='trash-put'
+command -v trash-put &> /dev/null && alias rm='trash-put'
 alias lastmod='find . -type f -not -path "*/\.*" -exec ls -lt {} +'
 alias t='exit'
 alias cpf='copyfile'
