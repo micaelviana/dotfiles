@@ -1,0 +1,161 @@
+#!/usr/bin/env bash
+
+downloads_dir="/mnt/c/Users/micae/Downloads"
+
+if ! command -v fzf >/dev/null 2>&1; then
+  echo "downloads: o fzf é necessário" >&2
+  exit 1
+fi
+
+if [[ ! -d "$downloads_dir" ]]; then
+  echo "downloads: diretório não encontrado: $downloads_dir" >&2
+  exit 1
+fi
+
+mapfile -d '' -t download_entries < <(
+  find "$downloads_dir" -maxdepth 1 -type f -printf '%T@\t%p\0' |
+    sort -z -t $'\t' -k1,1nr
+)
+
+if (( ${#download_entries[@]} == 0 )); then
+  echo "downloads: nenhum arquivo encontrado em $downloads_dir" >&2
+  exit 0
+fi
+
+while true; do
+selected_entry=
+IFS= read -r -d '' selected_entry < <(
+  printf '%s\0' "${download_entries[@]}" |
+    fzf --read0 --print0 --delimiter=$'\t' --with-nth=2.. --prompt='Downloads > '
+)
+
+if [[ -z "$selected_entry" ]]; then
+  exit 0
+fi
+
+selected_file="${selected_entry#*$'\t'}"
+filename="${selected_file##*/}"
+lower_filename="${filename,,}"
+is_archive=false
+
+case "$lower_filename" in
+  *.tar|*.tar.gz|*.tgz|*.tar.bz2|*.tbz|*.tbz2|*.tar.xz|*.txz|*.tar.zst|*.tzst|*.tar.lz|*.tlz|*.tar.lz4|*.zip|*.jar|*.war|*.7z|*.rar|*.gz|*.bz2|*.xz|*.zst|*.lzma|*.lz4)
+    is_archive=true
+    ;;
+esac
+
+actions=("Copiar arquivo para o diretório atual")
+if [[ "$is_archive" == true ]]; then
+  actions+=("Extrair arquivo para uma pasta")
+fi
+actions+=("Voltar ao menu anterior")
+actions+=("Cancelar")
+
+action=$(printf '%s\n' "${actions[@]}" |
+  fzf --prompt='Action > ' --height=40% --reverse --border) || exit 0
+
+case "$action" in
+  "Copiar arquivo para o diretório atual")
+    cp -i -- "$selected_file" .
+    ;;
+  "Extrair arquivo para uma pasta")
+    archive_name="$filename"
+    case "$lower_filename" in
+      *.tar.gz|*.tar.bz2|*.tar.xz|*.tar.zst|*.tar.lz|*.tar.lz4)
+        archive_name="${filename%.*.*}"
+        ;;
+      *.tgz|*.tbz|*.tbz2|*.txz|*.tzst|*.tlz)
+        archive_name="${filename%.*}"
+        ;;
+      *)
+        archive_name="${filename%.*}"
+        ;;
+    esac
+    if [[ -z "$archive_name" ]]; then
+      archive_name="$filename"
+    fi
+
+    case "$lower_filename" in
+      *.7z|*.rar)
+        if command -v 7z >/dev/null 2>&1; then
+          extractor=7z
+        elif command -v 7zz >/dev/null 2>&1; then
+          extractor=7zz
+        elif [[ "$lower_filename" == *.rar ]] && command -v unrar >/dev/null 2>&1; then
+          extractor=unrar
+        else
+          echo "downloads: arquivos .7z e .rar requerem 7z (ou unrar para .rar)" >&2
+          exit 1
+        fi
+        ;;
+      *.zst)
+        if ! command -v zstd >/dev/null 2>&1; then
+          echo "downloads: arquivos .zst requerem zstd" >&2
+          exit 1
+        fi
+        ;;
+      *.lz4)
+        if ! command -v lz4 >/dev/null 2>&1; then
+          echo "downloads: arquivos .lz4 requerem lz4" >&2
+          exit 1
+        fi
+        ;;
+    esac
+
+    destination="$archive_name"
+    suffix=1
+    while [[ -e "$destination" ]]; do
+      destination="${archive_name}-$suffix"
+      ((suffix += 1))
+    done
+
+    if ! mkdir -- "$destination"; then
+      echo "downloads: não foi possível criar a pasta de extração: $destination" >&2
+      exit 1
+    fi
+
+    case "$lower_filename" in
+      *.tar|*.tar.gz|*.tgz|*.tar.bz2|*.tbz|*.tbz2|*.tar.xz|*.txz|*.tar.zst|*.tzst|*.tar.lz|*.tlz|*.tar.lz4)
+        tar -xf "$selected_file" -C "$destination"
+        ;;
+      *.zip|*.jar|*.war)
+        unzip -q "$selected_file" -d "$destination"
+        ;;
+      *.7z)
+        "$extractor" x -y "-o$destination" -- "$selected_file"
+        ;;
+      *.rar)
+        if [[ "$extractor" == unrar ]]; then
+          unrar x -o+ "$selected_file" "$destination/"
+        else
+          "$extractor" x -y "-o$destination" -- "$selected_file"
+        fi
+        ;;
+      *.gz)
+        gzip -dc -- "$selected_file" > "$destination/${filename%.*}"
+        ;;
+      *.bz2)
+        bzip2 -dc -- "$selected_file" > "$destination/${filename%.*}"
+        ;;
+      *.xz)
+        xz -dc -- "$selected_file" > "$destination/${filename%.*}"
+        ;;
+      *.zst)
+        zstd -dc -- "$selected_file" > "$destination/${filename%.*}"
+        ;;
+      *.lzma)
+        xz --format=lzma -dc -- "$selected_file" > "$destination/${filename%.*}"
+        ;;
+      *.lz4)
+        lz4 -dc -- "$selected_file" > "$destination/${filename%.*}"
+        ;;
+    esac
+    ;;
+  "Voltar ao menu anterior")
+    continue
+    ;;
+  *)
+    exit 0
+    ;;
+esac
+done
