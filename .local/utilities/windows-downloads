@@ -26,7 +26,7 @@ while true; do
 selected_entry=
 IFS= read -r -d '' selected_entry < <(
   printf '%s\0' "${download_entries[@]}" |
-    fzf --read0 --print0 --delimiter=$'\t' --with-nth=2.. --prompt='Downloads > '
+    fzf --read0 --print0 --delimiter=$'\t' --with-nth=2.. --reverse --prompt='Downloads > '
 )
 
 if [[ -z "$selected_entry" ]]; then
@@ -56,7 +56,13 @@ action=$(printf '%s\n' "${actions[@]}" |
 
 case "$action" in
   "Copiar arquivo para o diretório atual")
-    cp -i -- "$selected_file" .
+    if cp -i -- "$selected_file" .; then
+      echo "downloads: copiado para: $PWD/$filename"
+      exit 0
+    else
+      echo "downloads: falha ao copiar: $filename" >&2
+      exit 1
+    fi
     ;;
   "Extrair arquivo para uma pasta")
     archive_name="$filename"
@@ -114,42 +120,68 @@ case "$action" in
       exit 1
     fi
 
+    extract_ok=false
     case "$lower_filename" in
       *.tar|*.tar.gz|*.tgz|*.tar.bz2|*.tbz|*.tbz2|*.tar.xz|*.txz|*.tar.zst|*.tzst|*.tar.lz|*.tlz|*.tar.lz4)
-        tar -xf "$selected_file" -C "$destination"
+        tar -xf "$selected_file" -C "$destination" && extract_ok=true
         ;;
       *.zip|*.jar|*.war)
-        unzip -q "$selected_file" -d "$destination"
+        unzip -q "$selected_file" -d "$destination" && extract_ok=true
         ;;
       *.7z)
-        "$extractor" x -y "-o$destination" -- "$selected_file"
+        "$extractor" x -y "-o$destination" -- "$selected_file" >/dev/null && extract_ok=true
         ;;
       *.rar)
         if [[ "$extractor" == unrar ]]; then
-          unrar x -o+ "$selected_file" "$destination/"
+          unrar x -o+ "$selected_file" "$destination/" >/dev/null && extract_ok=true
         else
-          "$extractor" x -y "-o$destination" -- "$selected_file"
+          "$extractor" x -y "-o$destination" -- "$selected_file" >/dev/null && extract_ok=true
         fi
         ;;
       *.gz)
-        gzip -dc -- "$selected_file" > "$destination/${filename%.*}"
+        gzip -dc -- "$selected_file" > "$destination/${filename%.*}" && extract_ok=true
         ;;
       *.bz2)
-        bzip2 -dc -- "$selected_file" > "$destination/${filename%.*}"
+        bzip2 -dc -- "$selected_file" > "$destination/${filename%.*}" && extract_ok=true
         ;;
       *.xz)
-        xz -dc -- "$selected_file" > "$destination/${filename%.*}"
+        xz -dc -- "$selected_file" > "$destination/${filename%.*}" && extract_ok=true
         ;;
       *.zst)
-        zstd -dc -- "$selected_file" > "$destination/${filename%.*}"
+        zstd -dc -- "$selected_file" > "$destination/${filename%.*}" && extract_ok=true
         ;;
       *.lzma)
-        xz --format=lzma -dc -- "$selected_file" > "$destination/${filename%.*}"
+        xz --format=lzma -dc -- "$selected_file" > "$destination/${filename%.*}" && extract_ok=true
         ;;
       *.lz4)
-        lz4 -dc -- "$selected_file" > "$destination/${filename%.*}"
+        lz4 -dc -- "$selected_file" > "$destination/${filename%.*}" && extract_ok=true
         ;;
     esac
+
+    if [[ "$extract_ok" == true ]]; then
+      # Se o arquivo tinha uma única pasta raiz, aplaina o conteúdo
+      # (ex.: zip com tudo dentro de "projeto/" não vira projeto/projeto/...)
+      shopt -s dotglob nullglob
+      inner_entries=("$destination"/*)
+      if (( ${#inner_entries[@]} == 1 )) && [[ -d "${inner_entries[0]}" ]]; then
+        inner="${inner_entries[0]}"
+        inner_files=("$inner"/*)
+        if (( ${#inner_files[@]} > 0 )); then
+          mv "$inner"/* "$destination"/
+        fi
+        rmdir -- "$inner"
+      fi
+      shopt -u dotglob nullglob
+      echo "downloads: extraído em: $PWD/$destination"
+    else
+      echo "downloads: falha ao extrair: $filename" >&2
+      if [[ -z "$(ls -A -- "$destination" 2>/dev/null)" ]]; then
+        rmdir -- "$destination"
+      else
+        echo "downloads: arquivos parciais deixados em: $PWD/$destination" >&2
+      fi
+    fi
+    exit 0
     ;;
   "Voltar ao menu anterior")
     continue
