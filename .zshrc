@@ -111,12 +111,12 @@ zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
 # Press ctrl+g to run wsl-downlods script
-run_wsl_downloads() {
-    command wsl-downloads
+run_windows_downloads() {
+    command windows-downloads
     zle reset-prompt
 }
-zle -N run_wsl_downloads
-bindkey '^G' run_wsl_downloads
+zle -N run_windows_downloads
+bindkey '^G' run_windows_downloads
 
 # Press ctrl+o to run lazygit
 lazygit-widget() {
