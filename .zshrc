@@ -110,21 +110,21 @@ autoload edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
 
-# Press ctrl+g to run wsl-downlods script
+# run wsl-downlods script
 run_windows_downloads() {
     command windows-downloads
     zle reset-prompt
 }
 zle -N run_windows_downloads
-bindkey '^G' run_windows_downloads
+bindkey '^O' run_windows_downloads
 
-# Press ctrl+o to run lazygit
+# run lazygit
 lazygit-widget() {
     lazygit
     zle reset-prompt
 }
 zle -N lazygit-widget
-bindkey '^O' lazygit-widget
+bindkey '^G' lazygit-widget
 
 #Aliases
 #Common aliases
