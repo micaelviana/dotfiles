@@ -85,12 +85,6 @@ bindkey  "^[[H"   beginning-of-line #Home
 bindkey  "^[[F"   end-of-line       #End
 bindkey  "^[[3~"  delete-char       #Delete
 
-# Nvm
-# export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
-# [[ -r $NVM_DIR/bash_completion ]] && \. $NVM_DIR/bash_completion
-
-# Set up fzf key bindings and fuzzy completion
 FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= source <(fzf --zsh)
 
 
@@ -121,9 +115,16 @@ run_wsl_downloads() {
     command wsl-downloads
     zle reset-prompt
 }
-
 zle -N run_wsl_downloads
 bindkey '^G' run_wsl_downloads
+
+# Press ctrl+o to run lazygit
+lazygit-widget() {
+    lazygit
+    zle reset-prompt
+}
+zle -N lazygit-widget
+bindkey '^O' lazygit-widget
 
 #Aliases
 #Common aliases
