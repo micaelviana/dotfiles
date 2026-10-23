@@ -26,6 +26,7 @@ zinit light-mode for \
     zdharma-continuum/zinit-annex-patch-dl \
     zdharma-continuum/zinit-annex-rust
 
+#functions is required by termsupport.zsh
 zinit depth"1" light-mode for \
   zsh-users/zsh-autosuggestions \
   zdharma-continuum/fast-syntax-highlighting \
@@ -114,6 +115,15 @@ HISTORY_SUBSTRING_SEARCH_ENSURE_UNIQUE=1
 autoload edit-command-line
 zle -N edit-command-line
 bindkey '^X^E' edit-command-line
+
+# Press ctrl+g to run wsl-downlods script
+run_wsl_downloads() {
+    command wsl-downloads
+    zle reset-prompt
+}
+
+zle -N run_wsl_downloads
+bindkey '^G' run_wsl_downloads
 
 #Aliases
 #Common aliases
