@@ -5,8 +5,18 @@ return {
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	keys = {
 		{ "<space>B", "<cmd>FzfLua builtin<cr>", desc = "List all fzf commands" },
+		{ "<C-P>", "<cmd>FzfLua commands<cr>", desc = "List all Neovim commands" },
 		{
 			"<space>ff",
+			function()
+				require("fzf-lua").files({
+					fd_opts = "--color=never --type f --hidden --follow --no-ignore --exclude .git --exclude node_modules --exclude .next",
+				})
+			end,
+			desc = "Find Files",
+		},
+		{
+			"sf",
 			function()
 				require("fzf-lua").files({
 					fd_opts = "--color=never --type f --hidden --follow --no-ignore --exclude .git --exclude node_modules --exclude .next",
