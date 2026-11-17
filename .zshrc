@@ -28,8 +28,6 @@ zinit light-mode for \
 
 #functions is required by termsupport.zsh
 zinit depth"1" light-mode for \
-  zsh-users/zsh-autosuggestions \
-  zdharma-continuum/fast-syntax-highlighting \
   zsh-users/zsh-history-substring-search \
   wfxr/forgit \
   OMZL::clipboard.zsh \
@@ -38,6 +36,14 @@ zinit depth"1" light-mode for \
   OMZP::copyfile \
   OMZP::nvm \
   romkatv/powerlevel10k
+
+#Deja zsh to replace zsh autossuggestions
+zinit ice wait"0" lucid depth=1 pick"deja.plugin.zsh"
+zinit light Giammarco-Ferranti/deja
+
+# Zsh patina
+zinit ice as"program" from"gh-r" pick"zsh-patina-*/zsh-patina" atload'eval "$(zsh-patina activate)" && eval "$(zsh-patina completion)"'
+zinit light michel-kraemer/zsh-patina
 
 ### End of Zinit's installer chunk
 
