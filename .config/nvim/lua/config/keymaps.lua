@@ -222,4 +222,16 @@ keyset("n", "<leader>yp", function()
 	vim.notify("Yanked: " .. path, vim.log.levels.INFO)
 end, { desc = "Yank absolute path with line number" })
 
+keyset("n", "<leader>yr", function()
+	local path = vim.fn.expand("%:.")
+	vim.fn.setreg("+", path)
+	vim.notify("Yanked: " .. path, vim.log.levels.INFO)
+end, { desc = "Yank relative path" })
+
+keyset("n", "<leader>ya", function()
+	local path = vim.fn.expand("%:p")
+	vim.fn.setreg("+", path)
+	vim.notify("Yanked: " .. path, vim.log.levels.INFO)
+end, { desc = "Yank absolute path" })
+
 keyset("v", "<leader>cc", copy_as_codeblock, { desc = "Copy as codeblock" })
