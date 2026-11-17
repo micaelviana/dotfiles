@@ -1,4 +1,5 @@
 brew "atuin"
+brew "deja"
 brew "tealdeer"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
